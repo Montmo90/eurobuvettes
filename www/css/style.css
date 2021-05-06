@@ -11,12 +11,12 @@ Groupe B :
 
 
 h1 {
-    color: darkblue;
+    color: #171C60;
     font-size: 30px;
 }
 
 h2 {
-    color: blue;
+    color: #7BB1DD;
 }
 
 .center, th, td {
@@ -53,13 +53,13 @@ ul li {
 }
 
 .navigation {
-    background-color: darkblue;
+    background-color: #7bb1dd;
    
 }
 /* ============== MAIN ==================================== */
 
 main {
-    background-color: lightgray;
+    background-color: #C8CBD0;
 }
 
 .hauteurTest  {
@@ -75,7 +75,7 @@ main {
 }
 /* == VIGNETTES BUVETTES == */
 .buvettesAccueil {
-    background-color: rgb(41, 138, 100);
+    background-color: #BC000F;
     display: inline-block;
     padding:15px;
     width: 350px;
@@ -89,14 +89,15 @@ main {
 
 .buvettesAccueil h3 {
     margin-bottom: 5%;
+    color:#171C60;
 }
 
 .buvettesAccueil p {
     margin: 4%;
 }
-
+/* == BOUTON VIGNETTE == */
 .buvettesAccueil a {
-   background-color: tomato;
+   background-color: #F2CB05;
    border-radius: 18px;
    font-size: 25px;
    padding: 5px;
@@ -111,7 +112,7 @@ main {
 .annexeAccueil {
     /*display: inline-block;*/
     /*position: static;*/
-    background-color: blanchedalmond;
+    background-color: #042C50;
     width: 25%;
     margin: 2%;
     float:right;
@@ -119,6 +120,7 @@ main {
 
 .annexeAccueil p {
     margin: 12%;
+    color:#F2CB05;
 }
 
 .buvettesAccueil span {
@@ -130,7 +132,7 @@ main {
 /* ============== FOOTER ================================== */
 
 footer {
-    background-color: darkblue;
+    background-color: #7bb1dd;
     /*height: 60px;*/
 }
 
@@ -165,10 +167,7 @@ footer p {
     border-style: solid;
     border-width: 1px;
     border-color: black;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
+    border-radius: 18px;
 }
 
 .volontaire {
