@@ -1,0 +1,181 @@
+<!--
+16/04/2021
+Projet : Site EuroBuvette 2021
+Groupe B :
+            Fabian Metayer
+            Jeremy Chekroun
+            Morgan Tranquard
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Eurobuvette 2021</title>
+</head>
+
+
+<body>
+
+    <!--    Header      -->
+    <header>
+        <div class="logo">
+            <img src="img/logo2021.jpg" alt="logo eurobuvette 2021" width="120" height="150">
+        </div>
+        <div class="titles">
+            <h1>EUROBuvettes</h1>
+            <h2>Le site de gestion des buvettes de l'EURO 2021 !</h2>
+        </div>
+    <!--        Menu navigation du header           -->
+
+        <div class="navigation">
+            <nav>
+                <ul class="menu center">
+                    <li><a href="accueil.html">Nouveautés</a></li>
+                    <li><a href="statistiques.html">Statistiques</a></li>
+                    <li><a href="recherchemembres.html">Recherche membres</a></li>
+                    <li><a href="affectations.html">Affectations</a></li>
+                    <li><a href="prive.html">Administrateur</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--        Main            -->
+    <main>
+        <section class="center">
+            <br>
+            <form >
+                <label for="stats">Quelles statistiques cherchez vous ?</label>
+                <input list="statistiques" id="stats" name="stats" />
+                <datalist id="statistiques">
+                    <option value="Top Volontaires">
+                    <option value="Top Buvettes">
+                    <option value="Stats Matchs">
+                </datalist>
+                <input type="submit">
+              </form>
+        </section>
+        <section class="stats hauteurTest">
+            <div class="col">                
+                <table class="volontaire">
+                    <caption class="center">Top 5 volontaires</caption>
+                    <tr>
+                        <th>Volontaire</th>
+                        <th>Matches</th>
+                    </tr>
+                    <tr>
+                        <td>Super Jeremy</td>
+                        <td>48</td>
+                    </tr>
+                    <tr>
+                        <td>Zinedine Aziz</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>Cawcaw Corbo</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>Alexis</td>
+                        <td>8</td>
+                    </tr>
+                </table>
+            </div>
+           <div class="col">
+            <table class="volontaire">
+                <caption class="center">Top 5 buvettes</caption>
+                <tr>
+                    <th>Buvette</th>
+                    <th>Lieu</th>
+                    <th>Volontaires</th>
+                </tr>
+                <tr>
+                    <td>Buvette1</td>
+                    <td>Rochefort</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>Buvette2</td>
+                    <td>La Rochelle</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Buvette3</td>
+                    <td>Bordeaux</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Buvette4</td>
+                    <td>Saintes</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Buvette5</td>
+                    <td>Niort</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            </div>
+            <div class="col">
+                <table class="volontaire">
+                    <caption class="center">Match: Rochefort - Niort 31.02.2021</caption>
+                    <tr>
+                        <th>Buvette</th>
+                        <th>Lieu</th>
+                        <th>Responsable</th>
+                    </tr>
+                    <tr>
+                        <td>Buvette1</td>
+                        <td>Nord</td>
+                        <td>Cawcaw Corbo</td>
+                    </tr>
+                    <tr>
+                        <th>Volontaire</th>
+                        <td>Super Jeremy</td>
+                        <td>Zinedine Aziz</td>
+                        <td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Buvette2</td>
+                        <td>Sud</td>
+                        <td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <th>Volontaire</th>
+                        <td>Cawcaw Corbo</td>
+                    </tr>                 
+                    <tr>
+                        <td>Buvette3</td>
+                        <td>Est</td>
+                        <td>Thomas Pesquet</td>
+                    </tr>
+                    <tr>
+                        <th>Volontaire</th>
+                        <td>Zinedine Aziz</td>
+                        <td>Lorem Ipsum</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!--        Footer          -->
+    <footer>
+        <section class="center">
+            <p>&copy; Eurobuvettes 2021</p>
+        </section>
+    </footer>
+</body>
+
+
+</html>

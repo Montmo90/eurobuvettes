@@ -1,0 +1,198 @@
+/**
+16/04/2021
+Projet : Site EuroBuvette 2021
+Groupe B :
+            Fabian Metayer
+            Jeremy Chekroun
+            Morgan Tranquard
+
+/* ============== Propriétées générales ============== */
+
+
+
+h1 {
+    color: darkblue;
+    font-size: 30px;
+}
+
+h2 {
+    color: blue;
+}
+
+.center, th, td {
+    text-align: center;    
+}
+
+/* ============== HEADER ================================= */
+
+
+.logo {
+    display: inline-block; 
+    margin: 1%;
+    vertical-align: sub;
+ }
+ 
+.titles {
+    display: inline-block;
+    height: inherit;
+}
+
+nav a {
+    color: white;
+    margin: 5px;    
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.menu {
+    padding: 10px;
+}
+
+.navigation {
+    background-color: darkblue;
+   
+}
+/* ============== MAIN ==================================== */
+
+main {
+    background-color: lightgray;
+}
+
+.hauteurTest  {
+    height:500px;
+}
+/* ============== MAIN ACCUEIL  ============================ */
+
+.buvettesSlot{
+    /*background-color: aquamarine;*/
+    width: 70%;
+    height:100%;
+    display:inline-block;
+}
+/* == VIGNETTES BUVETTES == */
+.buvettesAccueil {
+    background-color: rgb(41, 138, 100);
+    display: inline-block;
+    padding:15px;
+    width: 350px;
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+    font-size: 20px; 
+    border-radius: 18px;
+}
+
+.buvettesAccueil h3 {
+    margin-bottom: 5%;
+}
+
+.buvettesAccueil p {
+    margin: 4%;
+}
+
+.buvettesAccueil a {
+   background-color: tomato;
+   border-radius: 18px;
+   font-size: 25px;
+   padding: 5px;
+   text-decoration: none;
+}
+
+.buvettesAccueil img {
+    vertical-align: middle;
+}
+
+/* == ANNEXE ASIDE == */
+.annexeAccueil {
+    /*display: inline-block;*/
+    /*position: static;*/
+    background-color: blanchedalmond;
+    width: 25%;
+    margin: 2%;
+    float:right;
+}
+
+.annexeAccueil p {
+    margin: 12%;
+}
+
+.buvettesAccueil span {
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+
+/* ============== FOOTER ================================== */
+
+footer {
+    background-color: darkblue;
+    /*height: 60px;*/
+}
+
+footer p {
+    color: white;
+    padding: 10px 0 10px 0;
+}
+
+/* ============== ADMINISTRATEUR ========================== */
+
+.formulaireConnexion {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 30%;
+    margin: auto;
+}
+
+/* ==============  Statistiques  ========================== */
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    margin: auto;
+    padding: 2%;
+}
+
+.col {
+    width: 27%;
+    height: 40%;
+    margin: auto;  
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+}
+
+.volontaire {
+    border-spacing: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+}
+
+th {
+    font-weight: bolder;
+}
+
+/* ==============  Formulaire  ============================ */
+
+fieldset {    
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+legend{    
+    padding: 0 5px 0 5px;
+}
+
+input {
+    margin: 3px 0 3px 0;
+}
