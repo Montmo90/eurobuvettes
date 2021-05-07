@@ -1,6 +1,6 @@
 /*  Desc : Permet de réinitialiser la valeur par défaut si l'imput est vide
     si non laisse la valeur dans l'imput
-    obj : L'objet conront
+    obj : L'objet courant
     value : Valeur à remetre par défaut*/
 function resetValue (obj, value) {            
     if(obj.value == '')
@@ -9,6 +9,9 @@ function resetValue (obj, value) {
         return obj.value;
 }
 
+/*  Desc : Permet de changer la valeur d'un imput l'ors du focus
+    obj : L'objet courant
+    value : Valeur à remetre par défaut*/
 function focusValue (obj, value) {            
     if(obj.value == value)
         return '';
