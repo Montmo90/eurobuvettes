@@ -23,9 +23,16 @@ h2 {
     text-align: center;    
 }
 
+/* ============== PANEL ================================= */
+.panel {
+    background-color: #d9dfdf;    
+    box-shadow: 5px 5px #BC000F;
+    padding: 1rem;
+    margin: 1rem 5rem;
+    border-radius: 5px;
+}
+
 /* ============== HEADER ================================= */
-
-
 .logo {
     display: inline-block; 
     margin: 1%;
@@ -68,6 +75,7 @@ ul li {
 
 main {
     background-color: #C8CBD0;
+    padding: 1px;
 }
 
 .hauteurTest  {
@@ -157,15 +165,6 @@ footer p {
     padding: 10px 0 10px 0;
 }
 
-/* ============== ADMINISTRATEUR ========================== */
-
-.formulaireConnexion {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    width: 30%;
-    margin: auto;
-}
-
 /* ==============  Statistiques  ========================== */
 
 .stats {
@@ -196,6 +195,15 @@ th {
     font-weight: bolder;
 }
 
+/* ==============  Recherche Membre  ========================== */
+
+.formulaireRechercheMembres {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 /* ==============  Affectations  ========================== */
 
 .divAffect {
@@ -208,6 +216,15 @@ th {
     width: 30%;
     margin: 2%;
     padding-top: 5%;
+}
+
+/* ============== ADMINISTRATEUR ========================== */
+
+.formulaireConnexion {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 30%;
+    margin: auto;
 }
 
 /* ==============  Formulaire  ============================ */
