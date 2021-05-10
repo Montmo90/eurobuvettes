@@ -8,11 +8,13 @@ Groupe B :
 
 /* ============== Propriétées générales ============== */
 
-
+html {
+    font-size: 16px;
+}
 
 h1 {
     color: #171C60;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 h2 {
@@ -49,7 +51,7 @@ nav a {
     color: #F2CB05;
     margin: 5px;
     font-family: 'Varela Round', sans-serif;
-    font-size: 20px;
+    font-size: 1.2rem;
     text-decoration: none;   
 }
 
@@ -64,7 +66,7 @@ ul li {
 }
 
 .menu {
-    padding: 10px;
+    padding: 0.5rem;
 }
 
 .navigation {
@@ -93,7 +95,7 @@ main {
 .buvettesAccueil {
     background-color: #d9dfdf;
     display: flex;
-    padding: 15px;
+    padding: 1rem;
     width: auto;
     margin-top: 2%;
     margin-left: 10%;
@@ -157,12 +159,11 @@ main {
 
 footer {
     background-color: #7bb1dd;
-    /*height: 60px;*/
 }
 
 footer p {
     color: white;
-    padding: 10px 0 10px 0;
+    padding: 0.5rem 0;
 }
 
 /* ==============  Statistiques  ========================== */
@@ -173,15 +174,6 @@ footer p {
     height: auto;
     margin: auto;
     padding: 2%;
-}
-
-.col {
-    width: 27%;
-    margin: auto;  
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 18px;
 }
 
 .volontaire {
@@ -235,11 +227,11 @@ fieldset {
 }
 
 legend{    
-    padding: 0 5px 0 5px;
+    padding: 0 5px;
 }
 
 input {
-    margin: 3px 0 3px 0;
+    margin: 3px 0;
 }
 
 
