@@ -50,25 +50,26 @@ Groupe B :
     </header>
 
     <!--        Main            -->
-    <main id="rechercheMembres" class="hauteurTest">
-        <section class="panel">
+    <main id="rechercheMembres">
+        <div class="panel">
             <form class="formulaireRechercheMembres" name="formulaireConnexion">
                 <input type="text" name="nom" id="nom" placeholder="Nom" >
                 <input type="text" name="age" id="age" placeholder="Age">
                 <input type="text" name="nbParticipations" id="nbParticipations" placeholder="Nombre de participation">
                 <div>
-                    <input type="checkbox" name="respBuvette" id="respBuvette"> Responsable d’une buvette ?
+                    Responsable d’une buvette ? Oui <input type="checkbox" name="respBuvetteOui" id="respBuvetteOui"> | Non <input type="checkbox" name="respBuvetteNon" id="respBuvetteNon">
                 </div>
                 <input type="button" value="Rechercher" onclick="rechercheMembres()">                
             </form>
-        </section>        
+        </div>        
+        <div id="resultat" class="panel" hidden></div>
     </main>
 
     <!--        Footer          -->
     <footer>
-        <section class="center">
+        <div class="center">
             <p>&copy; Eurobuvettes 2021</p>
-        </section>
+        </div>
     </footer>
 
     <script src="src/main.js"></script>

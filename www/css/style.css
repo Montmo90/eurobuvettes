@@ -201,17 +201,41 @@ th {
     justify-content: space-around;
     flex-grow: 1;
     padding: 0.5rem 0;
+    color:#171C60;
 }
 
 .resultat-membres-header span, .resultat-membres-item span {
     width: 25%;
 }
 
+.resultat-membres-header {
+    background-color: #042C50;
+    color:#F2CB05;
+    margin-bottom: 1rem;
+}
+
 .resultat-membres-header span {
     font-size: 1.25rem;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: center;
+}
+
+.resultat-membres-item span {
+    padding-left: 1rem;
+    /*border-left: 1px solid #171C60;*/
+}
+
+.resultat-membres-item:nth-child(even) {
+    background-color: #C8CBD0;
+}
+
+.resultat-membres-footer {
+    display: flex;
+    justify-content: center;
     color:#171C60;
+    font-weight: bold;
+    padding-top: 1rem;
 }
 
 /* ==============  Affectations  ========================== */
