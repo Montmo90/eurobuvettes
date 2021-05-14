@@ -52,15 +52,15 @@ Groupe B :
     <!--        Main            -->
     <main class="hauteurTest">
         <section class="center panel">
-            <form >
+            <form>
                 <label for="stats">Quelles statistiques cherchez vous ?</label>
-                <input list="statistiques" id="stats" name="stats" />
+                <input list="statistiques" id="stats" name="stats"/>
                 <datalist id="statistiques">
                     <option value="Top Volontaires">
                     <option value="Top Buvettes">
                     <option value="Stats Matchs">
                 </datalist>
-                <input type="submit">
+                <input type="submit" onclick="retour()">
               </form>
         </section><!--
         <section class="stats hauteurTest">
@@ -177,6 +177,8 @@ Groupe B :
             <p>&copy; Eurobuvettes 2021</p>
         </section>
     </footer>
+
+    <script src="src/main.js"></script>
 </body>
 
 
