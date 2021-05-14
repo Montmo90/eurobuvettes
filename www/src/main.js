@@ -36,7 +36,7 @@ var listeVolontaires = [];
 /*Split une chaine de charactére en tableau avec en paramétre une |*/
 var listeNom = "Fabian|Morgan|Jeremy|Killian|Cédric|Fairouze|Jean-Michel|Alexis M|Alexis T|Kevin|Aziz".split("|");
 var listeAge = "30|30|24|22|31|#Ondemandepaslagedunedame|Vieux|27|22|31|47".split("|");
-var listeNbPart = "2|5|3|7||5|4|2|7|2|6".split("|");
+var listeNbPart = "2|5|3|7|12|5|4|2|7|2|6".split("|");
 var listeResp = "false|true|false|true|true|false|false|false|true|false|true".split("|");
 
 /*Grace à une boucle j'ajoute mes listes à mon tableau listeVolontaires*/
@@ -72,8 +72,36 @@ var listeNomBuvette = "".split(",");
 var listeLieuBuvette = "".split(",");
 var listeBuvette = "".split(",");
 
+
+/*Recherche Membres*/
 function rechercheMembres() {
-    document.getElementById('rechercheMembres').innerHTML += '<section class="panel">Pas de résultat !</section>';
+    //Récupération et stockage de toutes les valeurs du formulaire
+    var nom = document.getElementById("nom").value;
+    var age = document.getElementById("age").value;
+    var nbParticipations = document.getElementById("nbParticipations").value;
+    //petit soucis pour le bolean
+    var respBuvette = document.getElementById("respBuvette").checked ? "true": "false";
+
+    var pasResultat = true;
+    var resultat = "";
+    for (var j = 0; j < listeVolontaires.length; j++) {
+        if(nom == listeVolontaires[j].nom || age == listeVolontaires[j].age || nbParticipations == listeVolontaires[j].nbPart || respBuvette == listeVolontaires[j].resp) {
+            if(resultat == "")
+                resultat += "<div class=\"resultat-membres-header\"><span>Nom</span><span>Age</span><span>Participations</span><span>Responsable ?</span></div>";
+
+            resultat += "<div class=\"resultat-membres-item\"><span>" + listeVolontaires[j].nom +"</span><span>"+ listeVolontaires[j].age +"</span><span>"+ listeVolontaires[j].nbPart +"</span><span>" + (listeVolontaires[j].resp == "true" ? "Oui" : "Non")  + "</span></div>";
+            pasResultat = false;
+        }
+    }
+
+    if(pasResultat)
+        resultat += "Pas de résultat !";
+
+    //Si un résultat est déjà affiché on l'efface
+    if(document.getElementById("resultat"))
+        document.getElementById("resultat").remove();
+        
+    document.getElementById("rechercheMembres").innerHTML += "<section id=\"resultat\" class=\"panel\">" + resultat + "</section>";
 }
 
 /*function dbg(x){
