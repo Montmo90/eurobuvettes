@@ -51,18 +51,36 @@ Groupe B :
 
     <!--        Main            -->
     <main class="hauteurTest">
-        <section class="center panel">
-            <form>
-                <label for="stats">Quelles statistiques cherchez vous ?</label>
-                <input list="statistiques" id="stats" name="stats"/>
-                <datalist id="statistiques">
-                    <option value="Top Volontaires">
-                    <option value="Top Buvettes">
-                    <option value="Stats Matchs">
-                </datalist>
-                <input type="submit" onclick="retour()">
+        <div class="center panel">
+            <form class="formulaireStats">
+                <div>
+                    Top Volontaires <input type="checkbox" name="Top Volontaires" id="TopVol">
+                </div>
+                <div>
+                    Top Buvettes <input type="checkbox" name="Top Buvettes" id="TopBuv">
+                </div>
+                <div>
+                    <label for="stats">Liste des matchs </label>
+                    <input list="listeMatchs" id="matchs" name="matchs"/>
+                    <datalist id="listeMatchs">
+                        <option value="01-01-2021">
+                        <option value="02-01-2021">
+                        <option value="03-01-2021">
+                        <option value="04-01-2021">
+                        <option value="05-01-2021">
+                        <option value="06-01-2021">
+                        <option value="07-01-2021">
+                        <option value="08-01-2021">
+                    </datalist>
+                </div>
+                <div>
+                    <input type="button" value="Rechercher" onclick="getStats()">
+                </div>
               </form>
-        </section><!--
+        </div>
+        <div class="stats panel">
+
+        </div><!--
         <section class="stats hauteurTest">
             <div class="col">                
                 <table class="volontaire">
@@ -178,6 +196,8 @@ Groupe B :
         </section>
     </footer>
 
+    <script src="src/bdd.js"></script>
+    <script src="src/statistiques.js"></script>
     <script src="src/main.js"></script>
 </body>
 

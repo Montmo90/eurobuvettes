@@ -19,99 +19,11 @@
         return obj.value;
 }*/
 
-const MDP = "admin123";
 
-/*Création du constructeur Volontaire*/
-function Volontaire (nom, age, nbPart, resp) {
-    this.nom = nom;
-    this.age = age;
-    this.nbPart = nbPart;
-    this.resp = resp;
-}
-
-/*Création d'un tableau vide*/
-var listeVolontaires = [];
-
-/*Création des listes pour chaque propriétées du constructeur Volontaire*/
-/*Split une chaine de charactére en tableau avec en paramétre une |*/
-var listeNom = "Fabian|Morgan|Jeremy|Killian|Cédric|Fairouze|Jean-Michel|Alexis M|Alexis T|Kevin|Aziz".split("|");
-var listeAge = "30|30|24|22|31|#Ondemandepaslagedunedame|Vieux|27|22|31|?".split("|");
-var listeNbPart = "2|5|3|7|12|5|4|2|7|2|6".split("|");
-var listeResp = "false|true|false|true|true|false|false|false|true|false|true".split("|");
-
-/*Grace à une boucle j'ajoute mes listes à mon tableau listeVolontaires*/
-for (var li = 0 ; li < listeNom.length; li++) {
-    /*Ajoute un nouveau Objet Volontaire avec comme paramétre la valeur du tableau à l'indice li*/
-    listeVolontaires.push(new Volontaire(listeNom[li], listeAge[li], listeNbPart[li], (listeResp[li] == "true")))
-}
-
-//dbg(listeVolontaires[6].nom);//Jean-Michel
-
-/*Création du constructeur Matchs*/
-function Match (date, teamA, teamB, score) {
-    this.date = date;
-    this.teamA = teamA;
-    this.teamB = teamB;
-    this.score = score;
-}
-
-function Buvette(nom, lieu) {
-    this.nom = nom;
-    this.lieu = lieu;
-}
-
-var listeBuvettes = [new Buvette("AFPA","Rochefort"), 
-                     new Buvette("Hérisson","La Rochelle"),
-                     new Buvette("","")];
-
-//dbg(listeBuvettes[1].nom)
-
-var listeNomBuvette = "".split(",");
-var listeLieuBuvette = "".split(",");
-var listeBuvette = "".split(",");
 
 
 /*Recherche Membres*/
-function rechercheMembres() {
-    //Récupération et stockage de toutes les valeurs du formulaire
-    var nom = document.getElementById("nom").value;
-    var age = document.getElementById("age").value;
-    var nbParticipations = document.getElementById("nbParticipations").value;
-    var respBuvetteOui = document.getElementById("respBuvetteOui").checked;
-    var respBuvetteNon = document.getElementById("respBuvetteNon").checked;
 
-    var respBuvette = respBuvetteOui || respBuvetteNon;
-    var pasResultat = true;
-    var resultat = "";
-    var count = 0;
-
-    for (var j = 0; j < listeVolontaires.length; j++) {
-        var trouve = nom == listeVolontaires[j].nom || age == listeVolontaires[j].age || nbParticipations == listeVolontaires[j].nbPart;
-        
-        console.log(j +" " + (respBuvette && respBuvetteOui == listeVolontaires[j].resp));
-        console.log(j +" " + (respBuvette && !respBuvetteNon == listeVolontaires[j].resp));
-
-        if(trouve || (respBuvette && respBuvetteOui == listeVolontaires[j].resp) || (respBuvette && !respBuvetteNon == listeVolontaires[j].resp)) {
-            //Création du Header des résultats
-            if(resultat == "")
-                resultat += "<div class=\"resultat-membres-header\"><span>Nom</span><span>Age</span><span>Participations</span><span>Responsable ?</span></div>";
-
-            resultat += "<div class=\"resultat-membres-item\"><span>" + listeVolontaires[j].nom +"</span><span>"+ listeVolontaires[j].age +"</span><span>"+ listeVolontaires[j].nbPart +"</span><span>" + (listeVolontaires[j].resp == true ? "Oui" : "Non")  + "</span></div>";
-            pasResultat = false;
-
-            count++;
-        }
-    }
-
-    if(pasResultat)
-        resultat += "Pas de résultat !";
-    else
-        resultat += "<div class=\"resultat-membres-footer\">" + count + " résultat(s) trouvé(s).</div>";
-    
-    //Affichage de la section resultat et intégration du résultat
-    document.getElementById("resultat").hidden = false;
-    document.getElementById("resultat").innerHTML = resultat;
-}
 
 /*function dbg(x){
     console.log(x);

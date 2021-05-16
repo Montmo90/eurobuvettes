@@ -81,7 +81,7 @@ main {
 }
 
 .hauteurTest  {
-    height:500px;
+    height:600px;
 }
 /* ============== MAIN ACCUEIL  ============================ */
 
@@ -169,6 +169,17 @@ footer p {
 /* ==============  Statistiques  ========================== */
 
 .stats {
+    visibility: hidden;
+}
+
+.formulaireStats {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/*
+.stats {
     display: flex;
     flex-direction: row;
     height: auto;
@@ -186,6 +197,7 @@ footer p {
 th {
     font-weight: bolder;
 }
+*/
 
 /* ==============  Recherche Membre  ========================== */
 
