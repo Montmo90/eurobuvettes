@@ -7,9 +7,12 @@ Groupe B :
             Morgan Tranquard
 
 /* ============== Propriétées générales ============== */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Varela+Round&display=swap');
 
 html {
     font-size: 16px;
+    
 }
 
 h1 {
@@ -261,7 +264,7 @@ th {
 .affect {
     width: 30%;
     margin: 2%;
-    padding-top: 5%;
+    /*padding-top: 5%;*/
 }
 
 /* ============== ADMINISTRATEUR ========================== */
