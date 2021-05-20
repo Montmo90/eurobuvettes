@@ -14,8 +14,8 @@ var listeVolontaires = [];
 /*Création des listes pour chaque propriétées du constructeur Volontaire*/
 /*Split une chaine de charactére en tableau avec en paramétre une |*/
 var listeNom = "Fabian|Morgan|Jeremy|Killian|Cédric|Fairouze|Jean-Michel|Alexis M|Alexis T|Kevin|Aziz".split("|");
-var listeAge = "30|30|24|22|31|#Ondemandepaslagedunedame|Vieux|27|22|31|?".split("|");
-var listeNbPart = "17|13|11|8|6|6|5|4|3|2|1".split("|");
+var listeAge = "30|30|24|22|31|#On-demande-pas-l-age-d-une-dame|16|27|22|31|?".split("|");
+var listeNbPart = "13|7|11|42|2|31|22|8|12|2|5".split("|");
 var listeResp = "false|true|false|true|true|false|false|false|true|false|true".split("|");
 
 /*Grace à une boucle j'ajoute mes listes à mon tableau listeVolontaires*/
@@ -49,32 +49,43 @@ var listeEquipe = [new Equipe("fr", "FRANCE", "img/fr.png"),
                    new Equipe("uk", "UKRAINE", "img/uk.png"),
                    new Equipe("rt", "REPUBLIQUE TCHEQUE", "img/rt.png")];
 
-/*Création du constructeur Matchs*/
-function Match (date, teamA, teamB, score) {
-    this.date = date;
-    this.teamA = teamA;
-    this.teamB = teamB;
-    this.score = score;
-}
-
-var listeMatch = [new Match("01-01-2021", "fr", "ro", "13-0"),
-                  new Match("02-01-2021", "alb", "su", "0-0"),
-                  new Match("03-01-2021", "ga", "sl", "2-1"),
-                  new Match("04-01-2021", "an", "ru", "3-3"),
-                  new Match("05-01-2021", "tu", "cr", "5-2"),
-                  new Match("06-01-2021", "po", "ir", "4-0"),
-                  new Match("07-01-2021", "al", "uk", "1-3"),
-                  new Match("08-01-2021", "es", "rt", "0-1")];
-
-function Buvette(nom, lieu, nbVol, listVol) {
+/*Création du constructeur Buvette*/
+function Buvette(nom, lieu, nbVol, listVol, resp) {
     this.nom = nom;
     this.lieu = lieu;
     this.nbVol = nbVol;
     this.listVol = listVol;
+    this.resp = resp;
 }
 
-var listeBuvettes = [new Buvette("bv1","Rochefort"), 
-                     new Buvette("bv2","La Rochelle"),
-                     new Buvette("","")];
+var listeBuvettes = [new Buvette("Drinkons ensemble!","Parc des princes", "4", "Jean-Michel,Kevin,Fairouze,Jeremy", "Jean-Michel"), 
+                     new Buvette("ALCOLO","Stade de France", "1", "Alexis M", "Alexis M"),
+                     new Buvette("Yapado","Stade Vélodrome", "5", "Fabian,Morgan,Jeremy,Killian,Cédric", "Killian"),
+                     new Buvette("Bubbletohol","Allianz Riviera", "3", "Fairouze,Aziz,Alexis M", "Fairouze"),
+                     new Buvette("Balon bourré","Stade Geoffroy-Guichard", "2", "Aziz,Jeremy", "Jeremy"),
+                     new Buvette("Open Bar","Stadium", "1", "Jean-Michel", "Jean-Michel"),
+                     new Buvette("Un chat un verre","Stade Bollaert", "2", "Cédric,Jeremy", "Cédric"),
+                     new Buvette("Débit de boisson","Stade Pierre Mauroy", "3", "Alexis M,Killian,Morgan", "Morgan"),
+                     new Buvette("Glouglou","Stade des lumières", "4", "Fabian,Jean-Michel,Jeremy,Kevin", "Kevin"),
+                    ];
+
 
 //dbg(listeBuvettes[1].nom)
+
+/*Création du constructeur Matchs*/
+function Match (date, teamA, teamB, score, buvette) {
+    this.date = date;
+    this.teamA = teamA;
+    this.teamB = teamB;
+    this.score = score;
+    this.buvette = buvette;
+}
+
+var listeMatch = [new Match("01-01-2021", listeEquipe[0], listeEquipe[8], "13-0", listeBuvettes[1]),
+                  new Match("02-01-2021", listeEquipe[1], listeEquipe[9], "0-0", listeBuvettes[1]),
+                  new Match("03-01-2021", listeEquipe[2], listeEquipe[10], "2-1", listeBuvettes[2]),
+                  new Match("04-01-2021", listeEquipe[3], listeEquipe[11], "3-3", listeBuvettes[3]),
+                  new Match("05-01-2021", listeEquipe[4], listeEquipe[12], "5-2", listeBuvettes[4]),
+                  new Match("06-01-2021", listeEquipe[5], listeEquipe[13], "4-0", listeBuvettes[5]),
+                  new Match("07-01-2021", listeEquipe[6], listeEquipe[14], "1-3", listeBuvettes[6]),
+                  new Match("08-01-2021", listeEquipe[7], listeEquipe[15], "0-1", listeBuvettes[7])];

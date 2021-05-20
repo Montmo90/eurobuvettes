@@ -2,12 +2,13 @@ function dbg(x){
     console.log(x);
 }
 
-// 
+// Selectionne 
 function userInput(usrInput){
     var input=document.querySelector(usrInput);
     return input;
 }
 
+// reinitialise les champs du formulaire
 function uncheck() {
     userInput("#TopVol").checked = false;
     userInput("#TopBuv").checked = false;
@@ -35,11 +36,13 @@ function getStats() {
         }
     else
         if (topBuv == true && topVol == false && !match) {
+            divContent = topBuvettes();
             value = "Top Buvettes";
         }
     else
         if (match && topVol == false && topBuv == false) {
-            value = "Match : " + match;
+            value = "Match (" + match + ") :";
+            divContent = currentMatch(match);
         }
     else {
         value = "Trop d'arguments !";
@@ -53,6 +56,17 @@ function getStats() {
 
 function topVolontaires () {
     var content = "";
+    // Tri la liste d'objet volontaire du plus grand au plus petit
+    // La fonction à l'interieur sers à comparer les proprietés de l'objet
+    // afin de pouvoir trier l'objet grace à la methode sort(), prévue de base pour les chaines de caractères.
+    listeVolontaires.sort(function compare(a, b){
+        if (a.nbPart > b.nbPart)
+           return -1;
+        if (a.nbPart < b.nbPart )
+           return 1;
+        return 0;
+    });
+    // Affiche le top 5 des volontaires
     for (var i = 0; i < 5; i++) {
         topVolName = listeVolontaires[i].nom;
         topVolNbPart = listeVolontaires[i].nbPart;
@@ -61,5 +75,45 @@ function topVolontaires () {
     }
     return content;
 
+}
+
+function topBuvettes () {
+    var content = "";
+    // Tri la liste d'objet volontaire du plus grand au plus petit
+    // La fonction à l'interieur sers à comparer les proprietés de l'objet
+    // afin de pouvoir trier l'objet grace à la methode sort(), prévue de base pour les chaines de caractères.
+    listeBuvettes.sort(function compare(a, b){
+        if (a.nbVol > b.nbVol)
+           return -1;
+        if (a.nbVol < b.nbVol )
+           return 1;
+        return 0;
+    });
+    // Affiche le top 5 des volontaires
+    for (var i = 0; i < 5; i++) {
+        topBuvName = listeBuvettes[i].nom;
+        topBuvPlace = listeBuvettes[i].lieu;
+
+        content += "<div class=\"resultat-membres-item center\">" + "<span>" + topBuvName + "</span>" + "<span>" + topBuvPlace + "</span></div>";
+    }
+    return content;
+
+}
+
+function currentMatch(match) {
+    var content = "";
+    var infosMatch;
+    var InfosBuvettes;
+    // parcours la liste des matchs jusqu'a trouver la date correspondante
+    // puis enregistre la reference à l'objet dans la variable id
+    for (var i = 0; i < listeMatch.length; i++) {
+        if (listeMatch[i].date == match)
+            var id = listeMatch[i];
+    }
+        infosMatch = "<div class=\"center\">" + "<img width=\"80\" height=\"60\" src=\"" + id.teamA.drapeau + "\">" + id.teamA.pays + "  " + id.score + "  " + id.teamB.pays + "<img width=\"80\" height=\"60\" src=\"" + id.teamB.drapeau + "\">" + "</div>";
+        InfosBuvettes = "<div class=\"center\">" + id.buvette.nom + "  " + id.buvette.lieu + "  " + id.buvette.resp + "</div>";
+        content += infosMatch + InfosBuvettes;
+        content += "<br><br>" + "<div class=\"center\">" + "/!\\UNDER CONSTRUCTION /!\\" + "</div>"; // A supprimer plus tard
+    return content;
 }
 
