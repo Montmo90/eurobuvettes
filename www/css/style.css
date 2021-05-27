@@ -28,6 +28,15 @@ h2 {
     text-align: center;    
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Varela Round', sans-serif;
+    color:#171C60;
+}
+
 /* ============== PANEL ================================= */
 .panel {
     background-color: #d9dfdf;    
@@ -35,7 +44,14 @@ h2 {
     padding: 1rem;
     margin: 1rem 5rem;
     border-radius: 5px;
-    font-family: 'Robot', sans-serif;
+}
+
+.panel h3 {
+    margin: 3%;
+}
+
+.panel p {
+    font-size: 1.1rem;
 }
 
 /* ============== HEADER ================================= */
@@ -48,15 +64,14 @@ h2 {
 .titles {
     display: inline-block;
     height: inherit;
-    font-family: 'Varela Round', sans-serif;
 }
 
 nav a {
     color: #F2CB05;
     margin: 0.5rem;
-    font-family: 'Varela Round', sans-serif;
     font-size: 1.2rem;
-    text-decoration: none;   
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav a:hover {
@@ -96,46 +111,40 @@ main {
     display:inline-block;
 }
 /* == VIGNETTES BUVETTES == */
-.buvettesAccueil {
-    background-color: #d9dfdf;
+.buvettesAccueil > div {
     display: flex;
-    padding: 1rem;
-    width: auto;
-    margin-top: 2%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    text-align: center;
-    font-size: 1.3rem; 
-    border-radius: 5px;
-    box-shadow: 5px 5px #BC000F;
-}
-
-.buvettesAccueil h3 {
-    margin: 3%;
-    color:#171C60;
-    font-family: 'Varela Round', sans-serif;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .buvettesAccueil p {
-    margin: 4%;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
+    margin: 2rem 0;
 }
-/* == BOUTON VIGNETTE == */
-.buvettesAccueil a {
-   background-color: #F2CB05;
-   border-radius: 18px;
-   font-size: 25px;
-   padding: 5px;
-   text-decoration: none;
-   font-family: 'Roboto', sans-serif;
+
+.buvettesAccueil > div:last-child {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
 }
 
 .buvettesAccueil img {
-    vertical-align: middle;
-    margin-top: 2%;
-    
+    width: 6rem;
 }
+
+.buvettesAccueil button {
+    padding: 1rem 1.2rem;
+    border-radius: 5rem;
+    border: #171C60 solid 0.1rem;
+    cursor: pointer;
+}
+
+.buvettesAccueil span {
+    padding: 0 1rem;
+    font-weight: bold;
+    color: #171C60;
+}
+
 
 /* == ANNEXE ASIDE == */
 .annexeAccueil {
@@ -150,14 +159,7 @@ main {
 .annexeAccueil p {
     margin: 11%;
     color:#F2CB05;
-    font-family: 'Roboto', sans-serif;
 }
-
-.buvettesAccueil span {
-    vertical-align: middle;
-    margin: 4% 2%;
-}
-
 
 /* ============== FOOTER ================================== */
 

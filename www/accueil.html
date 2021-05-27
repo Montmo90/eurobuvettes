@@ -20,7 +20,7 @@ Groupe B :
 </head>
 
 
-<body>
+<body onload="accueil()">
 
     <!--    Header      -->
     <header>
@@ -48,50 +48,10 @@ Groupe B :
 
     <!--        Main            -->
     <main class="mainAccueil">
-        <section>
+        <section id="buvettes">
             <!--    Emplacement des buvettes    -->
-            <section class="buvettesSlot">
-                <!-- Vignette 1-->
-                <div class="buvettesAccueil">
-                    <h3>Séance 1</h3>
-                    <img src="img/ir.png" alt="irish" width="80" height="60">
-                    <span>VS</span>
-                    <img src="img/es.png" alt="spain" width="80" height="60">
-                    <p>50 volontaires participants à la buvette</p>
-                    <p>Buvette de match 1/1</p>
-                    <!--<a href="">Rejoindre</a>-->
-                </div>
-                <!-- Vignette 2-->
-                <div class="buvettesAccueil">
-                    <h3>Séance 2</h3>
-                    <img src="img/an.png" alt="uk" width="80" height="60">
-                    <span>VS</span>
-                    <img src="img/ru.png" alt="rus" width="80" height="60">
-                    <p>24 volontaires participants à la buvette</p>
-                    <p>Buvette de match 1/2</p>
-                    <!--<a href="">Rejoindre</a>-->
-                </div>
-                <!-- Vignette 3-->
-                <div class="buvettesAccueil">
-                    <h3>Séance 3</h3>
-                    <img src="img/an.png" alt="uk" width="80" height="60">
-                    <span>VS</span>
-                    <img src="img/ru.png" alt="rus" width="80" height="60">
-                    <p>16 volontaires participants à la buvette</p>
-                    <p>Buvette de match 2/2</p>
-                    <!--<a href="">Rejoindre</a>-->
-                </div>
-                <!-- Vignette 4-->
-                <div class="buvettesAccueil">
-                    <h3>Séance 4</h3>
-                    <img src="img/fr.png" alt="fra" width="80" height="60">
-                    <span>VS</span>
-                    <img src="img/cr.png" alt="cro" width="80" height="60">
-                    <p>8 volontaires participants à la buvette</p>
-                    <p>Buvette de match 1/1</p>
-                    <!--<a href="">Rejoindre</a>-->
-                </div>
-
+            <section class="buvettesSlot">                
+                <!--Emplacement des buvettes ajouté via JS-->
             </section>
             <!-- Aside annexe accueil   -->
             <aside class="annexeAccueil">
@@ -116,7 +76,8 @@ Groupe B :
             <p>&copy; Eurobuvettes 2021</p>
         </section>
     </footer>
+    <script src="src/bdd.js"></script>
+    <script src="src/accueil.js"></script>
+    <script src="src/main.js"></script>
 </body>
-
-
 </html>

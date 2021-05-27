@@ -12,11 +12,9 @@ function rechercheMembres() {
     var count = 0;
 
     for (var j = 0; j < listeVolontaires.length; j++) {
+        
         var trouve = nom == listeVolontaires[j].nom || age == listeVolontaires[j].age || nbParticipations == listeVolontaires[j].nbPart;
         
-        console.log(j +" " + (respBuvette && respBuvetteOui == listeVolontaires[j].resp));
-        console.log(j +" " + (respBuvette && !respBuvetteNon == listeVolontaires[j].resp));
-
         if(trouve || (respBuvette && respBuvetteOui == listeVolontaires[j].resp) || (respBuvette && !respBuvetteNon == listeVolontaires[j].resp)) {
             //Création du Header des résultats
             if(resultat == "")
@@ -30,7 +28,7 @@ function rechercheMembres() {
     }
 
     if(pasResultat)
-        resultat += "Pas de résultat !";
+        resultat += "<div class=\"resultat-membres-header\"><span>Pas de résultat !</span></div>";
     else
         resultat += "<div class=\"resultat-membres-footer\">" + count + " résultat(s) trouvé(s).</div>";
     

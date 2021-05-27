@@ -50,7 +50,8 @@ var listeEquipe = [new Equipe("fr", "FRANCE", "img/fr.png"),
                    new Equipe("rt", "REPUBLIQUE TCHEQUE", "img/rt.png")];
 
 /*Création du constructeur Buvette*/
-function Buvette(nom, lieu, nbVol, listVol, resp) {
+function Buvette(ouvert, nom, lieu, nbVol, listVol, resp) {
+    this.ouvert = ouvert;
     this.nom = nom;
     this.lieu = lieu;
     this.nbVol = nbVol;
@@ -58,15 +59,15 @@ function Buvette(nom, lieu, nbVol, listVol, resp) {
     this.resp = resp;
 }
 
-var listeBuvettes = [new Buvette("Drinkons ensemble!","Parc des princes", "4", "Jean-Michel,Kevin,Fairouze,Jeremy", "Jean-Michel"), 
-                     new Buvette("ALCOLO","Stade de France", "1", "Alexis M", "Alexis M"),
-                     new Buvette("Yapado","Stade Vélodrome", "5", "Fabian,Morgan,Jeremy,Killian,Cédric", "Killian"),
-                     new Buvette("Bubbletohol","Allianz Riviera", "3", "Fairouze,Aziz,Alexis M", "Fairouze"),
-                     new Buvette("Balon bourré","Stade Geoffroy-Guichard", "2", "Aziz,Jeremy", "Jeremy"),
-                     new Buvette("Open Bar","Stadium", "1", "Jean-Michel", "Jean-Michel"),
-                     new Buvette("Un chat un verre","Stade Bollaert", "2", "Cédric,Jeremy", "Cédric"),
-                     new Buvette("Débit de boisson","Stade Pierre Mauroy", "3", "Alexis M,Killian,Morgan", "Morgan"),
-                     new Buvette("Glouglou","Stade des lumières", "4", "Fabian,Jean-Michel,Jeremy,Kevin", "Kevin"),
+var listeBuvettes = [new Buvette(true, "Drinkons ensemble!","Parc des princes", 4, "Jean-Michel,Kevin,Fairouze,Jeremy", "Jean-Michel"), 
+                     new Buvette(true, "ALCOLO","Stade de France", 1, "Alexis M", "Alexis M"),
+                     new Buvette(false, "Yapado","Stade Vélodrome", 5, "Fabian,Morgan,Jeremy,Killian,Cédric", "Killian"),
+                     new Buvette(false, "Bubbletohol","Allianz Riviera", 3, "Fairouze,Aziz,Alexis M", "Fairouze"),
+                     new Buvette(false,"Balon bourré","Stade Geoffroy-Guichard", 2, "Aziz,Jeremy", "Jeremy"),
+                     new Buvette(true, "Open Bar","Stadium", 1, "Jean-Michel", "Jean-Michel"),
+                     new Buvette(false, "Un chat un verre","Stade Bollaert", 2, "Cédric,Jeremy", "Cédric"),
+                     new Buvette(true, "Débit de boisson","Stade Pierre Mauroy", 3, "Alexis M,Killian,Morgan", "Morgan"),
+                     new Buvette(false, "Glouglou","Stade des lumières", 4, "Fabian,Jean-Michel,Jeremy,Kevin", "Kevin"),
                     ];
 
 
