@@ -50,7 +50,8 @@ Groupe B :
     <main>
         <section class="hauteurTest divAffect">
             <div class="center affect">
-                <form>
+                <input type="button" value="Affecter un volontaire" onclick=AfficheFormVolontaire()>
+                <form id="choixVol">
                     <fieldset class="panel">
                         <legend>Affecter un volontaire :</legend><br>
                             Match :
@@ -81,7 +82,8 @@ Groupe B :
                 </form>
             </div>
             <div class="center affect">
-                <form>
+                <input type="button" value="Ouvrir une buvette" onclick=AfficheFormBuvette()>
+                <form id="choixBuv">
                     <fieldset class="panel">
                         <legend>Ouvrir une buvette :</legend><br>
                             Match :
@@ -113,7 +115,6 @@ Groupe B :
             <p>&copy; Eurobuvettes 2021</p>
         </section>
     </footer>
+    <script src="src/affectations.js"></script>
 </body>
-
-
 </html>

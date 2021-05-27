@@ -270,6 +270,10 @@ th {
     /*padding-top: 5%;*/
 }
 
+#choixBuv, #choixVol {
+    display: none;
+}
+
 /* ============== ADMINISTRATEUR ========================== */
 
 .formulaireConnexion {
