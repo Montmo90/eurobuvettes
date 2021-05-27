@@ -47,66 +47,61 @@ Groupe B :
     </header>
 
     <!--        Main            -->
-    <main>
-        <section class="hauteurTest divAffect">
-            <div class="center affect">
-                <input type="button" value="Affecter un volontaire" onclick=AfficheFormVolontaire()>
-                <form id="choixVol">
-                    <fieldset class="panel">
-                        <legend>Affecter un volontaire :</legend><br>
-                            Match :
-                                <input type = "text" list = "match_list" name="match"> 
-                                    <datalist id = "match_list">
-                                        <option value = "Angleterre - Russie">
-                                        <option value = "Irelande - Espagne">
-                                        <option value = "France - Croatie">
-                                    </datalist><br/><br/>
-                            Buvette : 
-                                <input type = "text" list = "buvette_list" name="buvettes"> 
-                                    <datalist id = "buvette_list">
-                                        <option value = "En-Ru id-1">
-                                        <option value = "Ir-Es id-7">
-                                        <option value = "Fr-Cr id-3">
-                                    </datalist><br/><br/>
-                            Volontaire : 
-                                <input type = "text" list = "volontaire_list" name="volontaire"> 
-                                    <datalist id = "volontaire_list">
-                                        <option value = "Lorem Ipsum">
-                                        <option value = "Le chat">
-                                        <option value = "isxelA">
-                                    </datalist><br/><br/>
-                            Responsable :
-                                <input type="checkbox"><br><br>
-                                <input type="submit"> - <input type="reset"><br><br>
-                    </fieldset>
-                </form>
+    <main class="hauteurTest">
+        <div class="panel">
+            <div class="divAffect">
+                <input type="button" value="Affecter un volontaire" id="btnAffecter" onclick=AfficheFormVolontaire()>
+                <input type="button" value="Ouvrir une buvette" id="btnOuvrir" onclick=AfficheFormBuvette()>
             </div>
-            <div class="center affect">
-                <input type="button" value="Ouvrir une buvette" onclick=AfficheFormBuvette()>
-                <form id="choixBuv">
-                    <fieldset class="panel">
-                        <legend>Ouvrir une buvette :</legend><br>
-                            Match :
-                                <input type = "text" list = "match_list" name="match"> 
-                                    <datalist id = "match_list2">
-                                        <option value = "Angleterre - Russie">
-                                        <option value = "Irelande - Espagne">
-                                        <option value = "France - Croatie">
-                                    </datalist><br/><br/>
-                            Buvette : 
-                                <input type = "text" list = "buvette_list" name="buvettes"> 
-                                    <datalist id = "buvette_list2">
-                                        <option value = "En-Ru id-1">
-                                        <option value = "Ir-Es id-7">
-                                        <option value = "Fr-Cr id-3">
-                                    </datalist><br/><br/>
-                            Ouvert :
-                                <input type="checkbox"><br><br>
-                                <input type="submit"> - <input type="reset"><br><br>
-                    </fieldset>
-                </form>
-            </div>
-        </section>
+
+            <form id="choixVol" class="formAffect">
+                Match :
+                    <input type = "text" list = "match_list" name="match"> 
+                        <datalist id = "match_list">
+                            <option value = "Angleterre - Russie">
+                            <option value = "Irelande - Espagne">
+                            <option value = "France - Croatie">
+                        </datalist><br/><br/>
+                Buvette : 
+                    <input type = "text" list = "buvette_list" name="buvettes"> 
+                        <datalist id = "buvette_list">
+                            <option value = "En-Ru id-1">
+                            <option value = "Ir-Es id-7">
+                            <option value = "Fr-Cr id-3">
+                        </datalist><br/><br/>
+                Volontaire : 
+                    <input type = "text" list = "volontaire_list" name="volontaire"> 
+                        <datalist id = "volontaire_list">
+                            <option value = "Lorem Ipsum">
+                            <option value = "Le chat">
+                            <option value = "isxelA">
+                        </datalist><br/><br/>
+                Responsable :
+                    <input type="checkbox"><br><br>
+                    <input type="submit"> - <input type="reset"><br><br>
+            </form>
+        
+            <form id="choixBuv" class="formAffect">
+                Match :
+                    <input type = "text" list = "match_list" name="match"> 
+                        <datalist id = "match_list2">
+                            <option value = "Angleterre - Russie">
+                            <option value = "Irelande - Espagne">
+                            <option value = "France - Croatie">
+                        </datalist><br/><br/>
+                Buvette : 
+                    <input type = "text" list = "buvette_list" name="buvettes"> 
+                        <datalist id = "buvette_list2">
+                            <option value = "En-Ru id-1">
+                            <option value = "Ir-Es id-7">
+                            <option value = "Fr-Cr id-3">
+                        </datalist><br/><br/>
+                Ouvert :
+                    <input type="checkbox"><br><br>
+                    <input type="submit"> - <input type="reset"><br><br>
+            </form>
+
+        </div>
     </main>
 
     <!--        Footer          -->

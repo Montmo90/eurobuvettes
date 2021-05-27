@@ -37,6 +37,15 @@ h1, h2, h3, h4, h5, h6 {
     color:#171C60;
 }
 
+input {
+    border: #171C60 solid 0.1rem;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.5rem;
+}
+input:disabled  {
+    border: none;
+}
+
 /* ============== PANEL ================================= */
 .panel {
     background-color: #d9dfdf;    
@@ -264,6 +273,10 @@ th {
     justify-content: center;
 }
 
+.divAffect > input {
+    margin: 0 0.5rem;
+}
+
 .affect {
     width: 30%;
     margin: 2%;
@@ -274,6 +287,9 @@ th {
     display: none;
 }
 
+.formAffect {
+    padding-bottom: 2rem;
+}
 /* ============== ADMINISTRATEUR ========================== */
 
 .formulaireConnexion {
