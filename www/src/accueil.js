@@ -4,6 +4,7 @@ function accueil() {
     for (let i = 0; i < listeMatch.length; i++) {
         let listVol = listeMatch[i].buvette.listVol.split(',');
 
+        // ligne 15 <p>${listVol.length} volontaire${listVol.length > 1 ? "s" : ""} participant${listVol.length > 1 ? "s" : ""} à la buvette</p>
         let buvette = 
         `<div class="panel buvettesAccueil">
             <div>
@@ -11,7 +12,7 @@ function accueil() {
                 <img src="${listeMatch[i].teamA.drapeau}" alt="drapeau ${listeMatch[i].teamA.pays}">
                 <span>VS</span>
                 <img src="${listeMatch[i].teamB.drapeau}" alt="drapeau ${listeMatch[i].teamB.pays}">
-                <p>${listVol.length} volontaire${listVol.length > 1 ? "s" : ""} participant${listVol.length > 1 ? "s" : ""} à la buvette</p>
+                <p>${listeMatch[i].date}</p>
                 <p>${listeMatch[i].buvette.lieu}</p>
                 <button onclick="plus(${i})" id="buttonBuvette${i}">+</button>
             </div>
