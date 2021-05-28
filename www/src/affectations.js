@@ -1,7 +1,7 @@
 function AfficheFormVolontaire(){
     //var choix=document.getElementById("mdp");
     //console.log(choixVol);
-    document.getElementById("choixVol").style.display="initial";
+    document.getElementById("choixVol").style.display="block";
     document.getElementById("choixBuv").style.display="none";
 
     document.getElementById("btnAffecter").disabled = true;
@@ -13,7 +13,7 @@ function AfficheFormBuvette(){
     //var choix=document.getElementById("mdp");
     //console.log(choixBuv);
     document.getElementById("choixVol").style.display="none";
-    document.getElementById("choixBuv").style.display="initial";
+    document.getElementById("choixBuv").style.display="block";
 
     document.getElementById("btnAffecter").disabled = false;
     document.getElementById("btnOuvrir").disabled = true;
