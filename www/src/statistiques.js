@@ -110,10 +110,10 @@ function currentMatch(match) {
         if (listeMatch[i].date == match)
             var id = listeMatch[i];
     }
-        infosMatch = "<div class=\"center\">" + "<img width=\"80\" height=\"60\" src=\"" + id.teamA.drapeau + "\">" + id.teamA.pays + "  " + id.score + "  " + id.teamB.pays + "<img width=\"80\" height=\"60\" src=\"" + id.teamB.drapeau + "\">" + "</div>";
-        InfosBuvettes = "<div class=\"center\">" + id.buvette.nom + "  " + id.buvette.lieu + "  " + id.buvette.resp + "</div>";
-        content += infosMatch + InfosBuvettes;
-        content += "<br><br>" + "<div class=\"center\">" + "/!\\UNDER CONSTRUCTION /!\\" + "</div>"; // A supprimer plus tard
+        infosFlag = "<div><div><div class=\"statsMatch\"><div><img width=\"80\" height=\"60\" src=\""+ id.teamA.drapeau+"\"></div>"+"<div></div>"+"<div><img width=\"80\" height=\"60\" src=\""+id.teamB.drapeau+"\"></div></div>";
+        infosMatch = "<div class=\"center statsMatch\">"+"<div>"+id.teamA.pays+"</div>"+"<div>"+id.score+"</div>"+"<div>"+id.teamB.pays+"</div>"+"</div></div>";  
+        InfosBuvettes = "<div class=\"center statsMatch\">"+"<div>"+"Buvette : "+id.buvette.nom+"</div>"+"<div>"+"Lieu : "+id.buvette.lieu+"</div>"+"<div>"+"Responsable : "+id.buvette.resp+"</div>"+"</div></div>";
+        content += infosFlag + infosMatch + InfosBuvettes;
     return content;
 }
 
