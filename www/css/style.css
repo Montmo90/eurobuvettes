@@ -42,6 +42,12 @@ input {
     border-radius: 0.3rem;
     padding: 0.2rem 0.5rem;
 }
+
+input[type=button], input[type=submit], input[type=reset] {
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
 input:disabled  {
     border: none;
 }
@@ -271,10 +277,12 @@ footer p {
 
 #choixBuv, #choixVol {
     display: none;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .formAffect {
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 /* ============== ADMINISTRATEUR ========================== */
 
