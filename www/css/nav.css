@@ -1,0 +1,13 @@
+/*
+    bleu fonce  : #171C60;
+    bleu clair  : #7BB1DD;
+    rouge       : #BC000F;
+    jaune       : #F2CB05;
+*/
+.navigation {
+
+    background: rgb(23,28,96);
+    background: radial-gradient(circle, rgba(23,28,96,1) 49%, rgba(123,177,221,1) 88%);
+    padding: 0.4rem 0rem;
+    letter-spacing: 2.5px;
+}
