@@ -50,12 +50,13 @@ Groupe B :
     <main id="rechercheMembres" class="hauteurTest">
         <div class="panel">
             <form class="formulaireRechercheMembres" name="formulaireConnexion">
-                <input type="text" name="nom" id="nom" placeholder="Nom" onkeypress="rechercheMembres()">
-                <input type="text" name="age" id="age" placeholder="Age" onkeypress="rechercheMembres()">
-                <input type="text" name="nbParticipations" id="nbParticipations" placeholder="Nombre de participation" onkeypress="rechercheMembres()">
+                <input type="text" name="nom" id="nom" placeholder="Nom" >
+                <input type="text" name="age" id="age" placeholder="Age">
+                <input type="text" name="nbParticipations" id="nbParticipations" placeholder="Nombre de participation">
                 <div>
-                    Responsable d’une buvette ? Oui <input type="checkbox" name="respBuvetteOui" id="respBuvetteOui" onchange="rechercheMembres()"> | Non <input type="checkbox" name="respBuvetteNon" id="respBuvetteNon" onchange="rechercheMembres()">
-                </div>       
+                    Responsable d’une buvette ? Oui <input type="checkbox" name="respBuvetteOui" id="respBuvetteOui"> | Non <input type="checkbox" name="respBuvetteNon" id="respBuvetteNon">
+                </div>
+                <input type="button" value="Rechercher" onclick="rechercheMembres()">          
             </form>
         </div>        
         <div id="resultat" class="panel" hidden></div>
