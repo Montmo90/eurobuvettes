@@ -1,0 +1,12 @@
+/* ============== FOOTER ================================== */
+
+footer {
+    background: rgb(23,28,96);
+    background: radial-gradient(circle, rgba(23,28,96,1) 49%, rgba(123,177,221,1) 88%);
+    padding: 0 0;
+}
+
+footer p {
+    color: white;
+    padding: 0.5rem 0;
+}
