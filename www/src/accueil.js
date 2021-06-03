@@ -8,12 +8,16 @@ function accueil() {
         let buvette = 
         `<div class="panel buvettesAccueil">
             <div>
-                <h3>${listeMatch[i].buvette.ouvert ? "Ouvert" : "Fermée"}</h3>
-                <img src="${listeMatch[i].teamA.drapeau}" alt="drapeau ${listeMatch[i].teamA.pays}" class="buvettesImgDrapeau">
-                <span>VS</span>
-                <img src="${listeMatch[i].teamB.drapeau}" alt="drapeau ${listeMatch[i].teamB.pays}" class="buvettesImgDrapeau">
-                <p>${listeMatch[i].date}</p>
-                <p>${listeMatch[i].buvette.lieu}</p>
+                <h3 class="buvettesItems">${listeMatch[i].buvette.ouvert ? "Ouvert" : "Fermée"}</h3>
+                <div class="buvettesItems">
+                    <img src="${listeMatch[i].teamA.drapeau}" alt="drapeau ${listeMatch[i].teamA.pays}" class="buvettesImgDrapeau">
+                    <span>VS</span>
+                    <img src="${listeMatch[i].teamB.drapeau}" alt="drapeau ${listeMatch[i].teamB.pays}" class="buvettesImgDrapeau">
+                </div>
+                <div class="buvettesItems">
+                    <p>${listeMatch[i].date}</p>
+                </div>
+                <p class="buvettesLieu">${listeMatch[i].buvette.lieu}</p>
                 <img src="img/icons/loupe-avec-signe-plus.png" alt="" class="imgPlusMoins" onclick="plus(${i})" id="buttonBuvette${i}">
             </div>
             <div class="buvettesPlus" id="plusBuvettes${i}">
