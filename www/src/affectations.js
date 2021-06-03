@@ -1,3 +1,5 @@
+    //  Bouton Affecter un volontaire
+
 function AfficheFormVolontaire(){
     //var choix=document.getElementById("mdp");
     //console.log(choixVol);
@@ -8,6 +10,7 @@ function AfficheFormVolontaire(){
     document.getElementById("btnOuvrir").disabled = false;
     
 }
+    // Bouton Statut buvette
 
 function AfficheFormBuvette(){
     //var choix=document.getElementById("mdp");
@@ -20,11 +23,12 @@ function AfficheFormBuvette(){
 
 }
 
+    // Fonction de chargement
 function startAffectations() {
     affect();
     ouvrirBuvette();
 }
-
+    // Affectation listes Match, Buvettes et Responsables dans Affecter un volontaire
 function affect(){
     /* 1- recupérer listes de bdd.js
         2- la liste de match
@@ -69,13 +73,14 @@ function changeListBuvettes(buvetteList, objSelect) {
     //console.log(listeMatch[index].buvette.nom);
     document.getElementById(buvetteList).innerHTML = `<option selected></option><option value="${_indexMatch}">${listeMatch[_indexMatch].buvette.nom}</option>`;
 }
-
+    // Recuperation de l'information si une buvette choisie est ouverte/fermée
 function selectBuvettes() {
     document.getElementById("statut").innerHTML = "Statut : " + (listeMatch[_indexMatch].buvette.ouvert == true ? "Ouvert" : "Fermé");
-
+        // Si ouverte
     if(listeMatch[_indexMatch].buvette.ouvert == true){
         document.getElementById("btnOuvrirBuvette").disabled = true;
         document.getElementById("btnFermerBuvette").disabled = false;
+        // Fermée
     } else {
         console.log(document.getElementById("btnOuvrirBuvette"));
         document.getElementById("btnOuvrirBuvette").disabled = false;
@@ -83,11 +88,12 @@ function selectBuvettes() {
     }
 }
 
-//Permet de reinitialiser la saisie des champs
+    //  Permet de reinitialiser la saisie des champs
 function clearAffect(buvetteList){
     document.getElementById(buvetteList).innerHTML = '';
 }
 
+    // Msg alerte lors d'ouverture/fermeture
 function confirmation(ouverture) {
     if(confirm("Confirmer " + (ouverture ? "l'ouverture" : "la fermeture") + " de la buvette ?")) {
         if(ouverture) {
