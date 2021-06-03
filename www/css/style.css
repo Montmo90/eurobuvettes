@@ -10,6 +10,7 @@ Groupe B :
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Varela+Round&display=swap');
 @import url('./nav.css');
+@import url('./footer.css');
 
 html {
     font-size: 16px;
@@ -51,6 +52,19 @@ input[type=button], input[type=submit], input[type=reset] {
 
 input:disabled  {
     border: none;
+}
+
+/* ============== Scrollbar ========================== */
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 /* ============== PANEL ================================= */
@@ -164,16 +178,7 @@ main {
 }
 
 
-/* ============== FOOTER ================================== */
 
-footer {
-    background-color: #7bb1dd;
-}
-
-footer p {
-    color: white;
-    padding: 0.5rem 0;
-}
 
 /* ==============  Statistiques  ========================== */
 
