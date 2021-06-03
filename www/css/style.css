@@ -81,32 +81,6 @@ input:disabled  {
     height: inherit;
 }
 
-nav a {
-    color: #F2CB05;
-    margin: 0.5rem;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    background-color: white;
-}
-
-ul li {
-    display: inline-block;
-    margin-right: 2%;
-    margin-left: 2%;
-}
-
-.menu {
-    padding: 0.5rem;
-}
-
-.navigation {
-    background-color: #7bb1dd;
-   
-}
 /* ============== MAIN ==================================== */
 
 main {
