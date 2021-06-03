@@ -61,10 +61,6 @@ input:disabled  {
     border-radius: 5px;
 }
 
-.panel h3 {
-    margin: 3%;
-}
-
 .panel p {
     font-size: 1.1rem;
 }
@@ -93,6 +89,16 @@ main {
 }
 /* ============== MAIN ACCUEIL  ============================ */
 
+.accueil {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.accueil > *{
+    flex: 1 1 auto;
+}
+
 .buvettesSlot{
     /*background-color: aquamarine;*/
     width: 70%;
@@ -104,11 +110,17 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+.buvettesAccueil > div > *{
+    flex: 0 1 0;
 }
 
 .buvettesAccueil p {
-    margin: 2rem 0;
+    margin: 2rem 1rem;
+}
+.buvettesAccueil span {
+    text-align: center;
 }
 
 .buvettesAccueil > div:last-child {
@@ -117,15 +129,8 @@ main {
     transition: max-height 0.3s ease-out;
 }
 
-.buvettesAccueil img {
+.buvettesImgDrapeau {
     width: 6rem;
-}
-
-.buvettesAccueil button {
-    padding: 1rem 1.2rem;
-    border-radius: 5rem;
-    border: #171C60 solid 0.1rem;
-    cursor: pointer;
 }
 
 .buvettesAccueil span {
@@ -134,21 +139,29 @@ main {
     color: #171C60;
 }
 
+.imgPlusMoins {
+    cursor: pointer;
+    
+}
 
 /* == ANNEXE ASIDE == */
 .annexeAccueil {
-    /*display: inline-block;*/
-    /*position: static;*/
     background-color: #042C50;
     width: 25%;
-    margin: 1%;
-    float:right;
+    margin: 1rem;
 }
 
 .annexeAccueil p {
-    margin: 11%;
+    margin: 2rem;
     color:#F2CB05;
 }
+
+.asideBarre {    
+    background-color: #F2CB05;
+    border-color: #F2CB05;
+    margin: 0 2rem;
+}
+
 
 /* ============== FOOTER ================================== */
 
