@@ -10,14 +10,14 @@ Groupe B :
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Eurobuvette 2021</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Eurobuvettes 2021</title>
+    </head>
 
 
 <body>
@@ -33,17 +33,15 @@ Groupe B :
         </div>
     <!--        Menu navigation du header           -->
 
-        <div class="navigation">
-            <nav>
-                <ul class="menu center">
-                    <li><a href="accueil.html">Nouveautés</a></li>
-                    <li><a href="statistiques.html">Statistiques</a></li>
-                    <li><a href="recherchemembres.html">Recherche membres</a></li>
-                    <li><a href="affectations.html">Affectations</a></li>
-                    <li><a href="prive.html">Administrateur</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div class="navigation">
+        <div class="menu center">
+            <a href="accueil.html">Nouveautés</a>
+            <a href="statistiques.html">Statistiques</a>
+            <a class ="active" href="recherchemembres.html">Recherche membres</a>
+            <a href="affectations.html">Affectations</a>
+            <a href="prive.html">Administrateur</a>
+        </div>              
+    </div>
     </header>
 
     <!--        Main            -->
@@ -68,9 +66,11 @@ Groupe B :
             <p>&copy; Eurobuvettes 2021</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="src/bdd.js"></script>
-    <script src="src/recherchemembre.js"></script>
     <script src="src/main.js"></script>
+    <script src="src/recherchemembre.js"></script>
+    
 </body>
 </html>

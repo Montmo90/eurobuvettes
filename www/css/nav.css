@@ -3,11 +3,49 @@
     bleu clair  : #7BB1DD;
     rouge       : #BC000F;
     jaune       : #F2CB05;
+    bleu bis    : #042c50;
 */
-.navigation {
 
-    background: rgb(23,28,96);
-    background: radial-gradient(circle, rgba(23,28,96,1) 49%, rgba(123,177,221,1) 88%);
-    padding: 0.4rem 0rem;
-    letter-spacing: 2.5px;
+
+.navigation {
+    background: #042c50;
+    background: radial-gradient(circle, #042c50 49%, rgba(123,177,221,1) 88%);
+    padding: 0rem 0rem;
 }
+
+div .menu > a {
+    color: #F2CB05;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1.7em;
+    margin-left: 1.7em;
+    letter-spacing: 2.5px;
+    height: 3rem;
+}
+
+.menu {  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    
+}
+
+a {
+    display: flex;
+    align-items: center;
+    border: transparent solid 3px;
+}
+
+a.active {
+    border-bottom: #F2CB05 solid 3px;
+}
+
+a:hover {
+    border-bottom: #F2CB05 solid 3px;
+
+}
+
