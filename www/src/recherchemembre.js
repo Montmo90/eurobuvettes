@@ -18,9 +18,22 @@ function rechercheMembres() {
         if(trouve || (respBuvette && respBuvetteOui == listeVolontaires[j].resp) || (respBuvette && !respBuvetteNon == listeVolontaires[j].resp)) {
             //Création du Header des résultats
             if(resultat == "")
-                resultat += "<div class=\"resultat-membres-header\"><span>Nom</span><span>Age</span><span>Participations</span><span>Responsable ?</span></div>";
+                resultat += `<table class="table table-striped panel container mt-3">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Age</th>
+                                        <th scope="col">Participations</th>
+                                        <th scope="col">Responsable ?</th>
+                                    </tr>
+                                </thead>`;
 
-            resultat += "<div class=\"resultat-membres-item\"><span>" + listeVolontaires[j].nom +"</span><span>"+ listeVolontaires[j].age +"</span><span>"+ listeVolontaires[j].nbPart +"</span><span>" + (listeVolontaires[j].resp == true ? "Oui" : "Non")  + "</span></div>";
+            resultat += `<tr>
+                            <td>${listeVolontaires[j].nom}</td>
+                            <td>${listeVolontaires[j].age}</td>
+                            <td>${listeVolontaires[j].nbPart}</td>
+                            <td>${(listeVolontaires[j].resp == true ? "Oui" : "Non")}</td>
+                        </tr>`;
             pasResultat = false;
 
             count++;
@@ -28,9 +41,12 @@ function rechercheMembres() {
     }
 
     if(pasResultat)
-        resultat += "<div class=\"resultat-membres-header\"><span>Pas de résultat !</span></div>";
+        resultat += `<div class="panel container my-3"><div class="fs-3 text-center noResultat fw-bold">Pas de résultat !</div></div>`;
     else
-        resultat += "<div class=\"resultat-membres-footer\">" + count + " résultat(s) trouvé(s).</div>";
+        resultat += `<caption>${count} résultat(s) trouvé(s).</caption>`;
+        
+
+    resultat += "</table>";
     
     //Affichage de la section resultat et intégration du résultat
     document.getElementById("resultat").hidden = false;

@@ -1,0 +1,66 @@
+/*
+16/04/2021
+Projet : Site EuroBuvette 2021
+Groupe B :
+            Fabian Metayer
+            Jeremy Chekroun
+            Morgan Tranquard
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Varela+Round&display=swap');
+@import url('footer.css');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Varela Round', sans-serif;
+    color:#171C60;
+}
+
+.navigation {
+    background: #042c50;
+    background: radial-gradient(circle, #042c50 49%, rgba(123,177,221,1) 88%);
+}
+
+.navlien li > a {
+    color: #F2CB05;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+}
+
+.navlien a.active {
+    border-bottom: #F2CB05 solid 3px;
+}
+
+.navlien a:hover {
+    color: #F2CB05;
+    border-bottom: #F2CB05 solid 3px;
+}
+
+/* ============== PANEL ================================= */
+.panel {
+    background-color: #d9dfdf;    
+    box-shadow: 5px 5px #BC000F;
+    border-radius: 5px;
+}
+
+.panel p {
+    font-size: 1.1rem;
+}
+
+.noResultat {    
+    color:#171C60;
+}
+
+
+.hauteurTest  {
+    background-color: #C8CBD0;
+    height:700px;
+}
+
