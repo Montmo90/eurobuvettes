@@ -117,3 +117,7 @@ function currentMatch(match) {
     return content;
 }
 
+function listStatMatch(){
+    for(var j = listeMatch.length - 1 ; j >= 0 ; j-- )
+    document.getElementById("listeMatchs").innerHTML += `<option value="${listeMatch[j].date}">${listeMatch[j].teamA.pays} - ${listeMatch[j].teamB.pays}</option>`;
+}
