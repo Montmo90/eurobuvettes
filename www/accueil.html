@@ -16,33 +16,40 @@ Groupe B :
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-bts.css">
     <title>Eurobuvettes 2021</title>
 </head>
 
 
 <body onload="accueil()">
 
-    <!--    Header      -->
-    <header>
-        <div class="logo">
-
-            <img src="img/logo2021.jpg" alt="logo eurobuvette 2021" width="120" height="150">
+    <div class="container-fluid my-2">
+        <div class="row d-flex align-items-end">
+            <div class="col-lg-1">
+                <img src="img/logo2021.jpg" alt="logo eurobuvette 2021" class="img-fluid">
+            </div>
+            <div class="col-lg-11">
+                <h1>EUROBuvettes</h1>
+                <h2>Le site de gestion des buvettes de l'EURO 2021 !</h2>
+            </div>
         </div>
-        <div class="titles">
-            <h1>EUROBuvettes</h1>
-            <h2>Le site de gestion des buvettes de l'EURO 2021 !</h2>
-        </div>
-        <!--        Menu navigation du header           -->
-        <div class="navigation">
-            <div class="menu center">
-                <a class ="active" href="accueil.html">Nouveautés</a>
-                <a href="statistiques.html">Statistiques</a>
-                <a href="recherchemembres.html">Recherche membres</a>
-                <a href="affectations.html">Affectations</a>
-                <a href="prive.html">Administrateur</a>
-            </div>              
-        </div>
-    </header>
+    </div>
+    <!--        Menu navigation du header           -->
+    <div class="navbar navbar-expand-lg navigation p-0">
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav navlien">
+                    <li class="nav-item"><a class ="nav-link mx-3 active"href="accueil.html">Nouveautés</a></li>
+                    <li class="nav-item"><a class ="nav-link mx-3" href="statistiques.html">Statistiques</a></li>
+                    <li class="nav-item"><a class ="nav-link mx-3" href="recherchemembres.html">Membres</a></li>
+                    <li class="nav-item"><a class ="nav-link mx-3" href="affectations.html">Affectations</a></li>
+                    <li class="nav-item"><a class ="nav-link mx-3" href="prive.html">Administrateur</a></li>
+                </ul>
+            </div>
+        </div>           
+    </div>
     <!--        Main            -->
     <main class="mainAccueil">
         <section class="accueil" id="buvettes">
@@ -64,10 +71,10 @@ Groupe B :
     </main>
 
     <!--        Footer          -->
-    <footer>
-        <section class="center">
-            <p>&copy; Eurobuvettes 2021</p>
-        </section>
+    <footer class="container-fluid py-2">
+        <div class="row text-center ">
+            <p class="my-1">&copy; Eurobuvettes 2021</p>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
