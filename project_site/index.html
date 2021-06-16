@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: #7BB1DD;" id="Project">
-    <h1 class="display-3" style="color: #F2Cb05">Projet formation Afpa</h1>
-    <h2 class="display-5" style="color: #F2Cb05">EURObuvettes 2021</h2>
+    <div class="container">
+        <h1 class="display-3" style="color: #F2Cb05">Projet formation Afpa</h1>
+        <h2 class="display-5" style="color: #F2Cb05">EURObuvettes 2021</h2>
+    </div>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #042c50">
         <a class="navbar-brand" href="http://www.com-progress.fr/buvette/semaine8/accueil.html" target="_blank">EURObuvettes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,14 +47,14 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="https://trello.com/b/a80FS9io/projet-afpa-euro-buvettes" target="_blank" style="color: #F2Cb05">Trello</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#Equipe">L'équipe</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Liens</a>
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Les copains</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="https://trello.com/b/a80FS9io/projet-afpa-euro-buvettes" target="_blank">Trello</a></li>
-                        <li><a class="dropdown-item" href="https://github.com/Montmo90/eurobuvettes" target="_blank">Github</a></li>
-                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="http://kevinandrieu.com/projet_de_groupe_a/index.html" target="_blank">Projet Groupe A</a></li>
                         <li><a class="dropdown-item" href="http://com-progress.fr/ecole/" target="_blank">Projet Groupe C</a></li>
                     </ul>
@@ -62,7 +64,8 @@
         
     </nav>
     <main class="container-fluid">
-        <div class="row shadow bg-body shadow rounded" style="background-color: white;">
+        <div class="row shadow bg-body shadow min-vh-100" style="background-color: white;">
+            <!--############################### PRESENTATION ####################################-->
             <div class="col-md-4 text-center ">
                 <h3>Bienvenue sur le site du projet EUROBuvettes</h3>
                 <p>Ici vous trouverez toutes les infos concernant le processus de creation du projet<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure officiis reiciendis atque nesciunt cupiditate voluptates! Sit ipsum unde reprehenderit quia blanditiis tenetur voluptatum deleniti iste, laborum sapiente numquam ad repudiandae?
@@ -70,7 +73,8 @@
                 Laudantium veritatis excepturi dicta! Praesentium totam ea, nemo reiciendis obcaecati nam eaque illum unde. Corrupti hic deleniti assumenda nisi eos laborum quaerat fugiat, labore quasi, facilis aspernatur molestias omnis veniam.
                 Porro odio magnam possimus ea, cupiditate voluptates voluptas assumenda voluptatibus ducimus adipisci maiores nostrum. Soluta, deserunt dolorem sint enim corporis eos ut nobis ullam quasi sit nisi velit possimus quas?</p>
             </div>
-            <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade col-md-4" data-bs-ride="carousel" style="height:426px;">
+            <!-- ################################## CAROUSEL #################################-->
+            <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade col-md-4" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -133,16 +137,17 @@
                 <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <!--################################# HISTORIQUE PROJET#######################################-->
             <div class="col-md-4">
                 <h3>Historique du projet</h3>
                 <div class="accordion " id="accordionExample">
                     <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h2 class="accordion-header" id="heading1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                         Semaine #1
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                         <p><strong>Chef de projet : </strong>Fabian</p>
                         <p><strong>Objectifs : </strong>Organisation du projet et presentation des objectifs</p>
@@ -152,12 +157,12 @@
                     </div>
                     </div>
                     <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h2 class="accordion-header" id="heading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                         Semaine #2
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p><strong>Chef de projet : </strong></p>
                             <p><strong>Objectifs : </strong></p>
@@ -167,12 +172,12 @@
                     </div>
                     </div>
                     <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Semaine #3
-                        </button>
-                    </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            Semaine #3
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <p><strong>Chef de projet : </strong></p>
                                 <p><strong>Objectifs : </strong></p>
@@ -181,12 +186,89 @@
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            Semaine #4
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><strong>Chef de projet : </strong></p>
+                                <p><strong>Objectifs : </strong></p>
+                                <p><strong>Technologies/Outils : </strong></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            Semaine #5
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><strong>Chef de projet : </strong></p>
+                                <p><strong>Objectifs : </strong></p>
+                                <p><strong>Technologies/Outils : </strong></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            Semaine #6
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><strong>Chef de projet : </strong></p>
+                                <p><strong>Objectifs : </strong></p>
+                                <p><strong>Technologies/Outils : </strong></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                            Semaine #7
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><strong>Chef de projet : </strong></p>
+                                <p><strong>Objectifs : </strong></p>
+                                <p><strong>Technologies/Outils : </strong></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                            Semaine #8
+                            </button>
+                        </h2>
+                        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><strong>Chef de projet : </strong></p>
+                                <p><strong>Objectifs : </strong></p>
+                                <p><strong>Technologies/Outils : </strong></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            <!-- ############################ FIN HISTORIQUE #################################-->
         </div>
     </main>
-    <div id="Equipe">
-        <div class="container-fluid rounded-2">
+    <div id="Equipe" class="container-fluid">
+        <div class="row rounded-2">
             <h3>L'equipe</h3>
         </div>
       
