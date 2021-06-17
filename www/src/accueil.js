@@ -7,31 +7,33 @@ function accueil() {
         // ligne 15 <p>${listVol.length} volontaire${listVol.length > 1 ? "s" : ""} participant${listVol.length > 1 ? "s" : ""} à la buvette</p>
         let buvette = 
         `<br>
-  <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion accordion-flush panel" id="accordionFlushExample">
     <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-heading${i}">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapse${i}">   
-        <div class="container">
+      <div class="accordion-header" id="flush-heading${i}">
+        <button class="accordion-button collapsed buvExpand" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapse${i}">   
+        
         <div class="row">
-          <div class="col">
+          <div class="col-3">
             ${listeMatch[i].buvette.ouvert ? "Ouvert" : "Fermée"}
           </div>
-          <div class="col">
-            <img src="${listeMatch[i].teamA.drapeau}" alt="drapeau ${listeMatch[i].teamA.pays}" class="buvettesImgDrapeau">
-            <span>VS</span>
-            <img src="${listeMatch[i].teamB.drapeau}" alt="drapeau ${listeMatch[i].teamB.pays}" class="buvettesImgDrapeau">
+          <div class="col-3 d-flex align-items-center">
+          <div class="row">
+            <img src="${listeMatch[i].teamA.drapeau}" alt="drapeau ${listeMatch[i].teamA.pays}" class="buvettesImgDrapeau img-fluid col">
+            <span class="col">VS</span>
+            <img src="${listeMatch[i].teamB.drapeau}" alt="drapeau ${listeMatch[i].teamB.pays}" class="buvettesImgDrapeau img-fluid col">
+            </div>
           </div>
-          <div class="col">
+          <div class="col-3">
             ${listeMatch[i].date}
           </div>
-          <div class="col">
+          <div class="col-3">
             ${listeMatch[i].buvette.lieu}
           </div>
-        </div>
+        
     </div>
       </button>
-      </h2>
-    <div id="flush-collapse${i}" class="accordion-collapse collapse" aria-labelledby="flush-heading${i}" data-bs-parent="#accordionFlushExample">
+      </div>
+    <div id="flush-collapse${i}" class="accordion-collapse collapse buvExpand" aria-labelledby="flush-heading${i}" data-bs-parent="#accordionFlushExample">
     <div class="row">
     <div class="col">
     <br>
