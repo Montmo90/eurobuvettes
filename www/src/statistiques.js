@@ -71,7 +71,14 @@ function topVolontaires () {
         topVolName = listeVolontaires[i].nom;
         topVolNbPart = listeVolontaires[i].nbPart;
 
-        content += "<div class=\"resultat-membres-item center\">" + "<span>" + topVolName + "</span>" + "<span>" + topVolNbPart+ " participation(s)" + "</span></div>";
+        content +=`<div class="resultat-membres-item center">
+                    <span>
+                        ${topVolName}
+                    </span>
+                    <span>
+                        ${topVolNbPart} participation(s)
+                    </span>
+                    </div>`;
     }
     return content;
 
@@ -94,7 +101,14 @@ function topBuvettes () {
         topBuvName = listeBuvettes[i].nom;
         topBuvPlace = listeBuvettes[i].lieu;
 
-        content += "<div class=\"resultat-membres-item center\">" + "<span>" + topBuvName + "</span>" + "<span>" + topBuvPlace + "</span></div>";
+        content += `<div class="resultat-membres-item center">
+                        <span>
+                            ${topBuvName}
+                        </span>
+                        <span>
+                            ${topBuvPlace}
+                        </span>
+                    </div>`;
     }
     return content;
 
@@ -110,9 +124,39 @@ function currentMatch(match) {
         if (listeMatch[i].date == match)
             var id = listeMatch[i];
     }
-        infosFlag = "<div><div><div class=\"statsMatch\"><div><img width=\"80\" height=\"60\" src=\""+ id.teamA.drapeau+"\"></div>"+"<div></div>"+"<div><img width=\"80\" height=\"60\" src=\""+id.teamB.drapeau+"\"></div></div>";
-        infosMatch = "<div class=\"center statsMatch\">"+"<div>"+id.teamA.pays+"</div>"+"<div>"+id.score+"</div>"+"<div>"+id.teamB.pays+"</div>"+"</div></div>";  
-        InfosBuvettes = "<div class=\"center statsMatch\">"+"<div>"+"Buvette : "+id.buvette.nom+"</div>"+"<div>"+"Lieu : "+id.buvette.lieu+"</div>"+"<div>"+"Responsable : "+id.buvette.resp+"</div>"+"</div></div>";
+        infosFlag = `<div>
+                        <div>
+                            <div class="statsMatch">
+                                <div>
+                                    <img width"80" height="60" src="${id.teamA.drapeau}">
+                                </div>
+                                
+                                <div>
+                                </div>
+                                <div>
+                                <img width="80" height="60" src="${id.teamB.drapeau}">
+                                </div>
+                    </div>`;
+        
+        infosMatch = `<div class="center statsMatch">
+                        
+                        <div>${id.teamA.pays}</div>
+                        
+                        <div>${id.score}</div>
+                        
+                        <div>${id.teamB.pays}</div>
+                        
+                        </div>
+                    `;  
+        InfosBuvettes = `<div class="center statsMatch">
+                            
+                            <div>Buvette : ${id.buvette.nom}</div>
+                            
+                            <div>Lieu : ${id.buvette.lieu}</div>
+                            
+                            <div>Responsable : ${id.buvette.resp}</div>
+                        </div>
+                        `;
         content += infosFlag + infosMatch + InfosBuvettes;
     return content;
 }
