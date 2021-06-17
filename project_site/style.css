@@ -6,7 +6,29 @@
     padding: 1em 0 1em 1em;
 }
 
+.avaCard1 {
+    content: url(img/avatar-fabian.png);
+}
 
+.avaCard1:hover {
+    content: url(img/avatar-fabian2.png);
+}
+
+.avaCard2 {
+    content: url(img/avatar-jeremy.png);
+}
+
+.avaCard2:hover {
+    content: url(img/avatar-jeremy2.png);
+}
+
+.avaCard3 {
+    content: url(img/avatar-morgan.png);
+}
+
+.avaCard3:hover {
+    content: url(img/avatar-morgan2.png);
+}
 
 a:link, a:visited, a:active {
     text-decoration: none;
