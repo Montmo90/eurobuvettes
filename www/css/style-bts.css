@@ -43,6 +43,19 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: #F2CB05 solid 3px;
 }
 
+/* ============== Scrollbar ========================== */
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 /* ============== PANEL ================================= */
 .panel {
     background-color: #d9dfdf;    
@@ -69,5 +82,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .buvExpand {
+    background-color: #d9dfdf;
+}
+
+.accordion-item-custom {
+    background-color: #d9dfdf;
+}
+
+.accordion-button-custom:not(.collapsed) {
+    color : #171C60;
     background-color: #d9dfdf;
 }
