@@ -19,18 +19,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: #7BB1DD;" id="Project">
-    <div class="container">
+    <div class="container" id="project_title">
         <h1 class="display-3" style="color: #F2Cb05">Projet formation Afpa</h1>
         <h2 class="display-5" style="color: #F2Cb05">EURObuvettes 2021</h2>
     </div>
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #042c50">
-        <a class="navbar-brand" href="http://www.com-progress.fr/buvette/semaine8/accueil.html" target="_blank">EURObuvettes</a>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top text-center" style="background-color: #042c50; height: auto;">
+        <a class="navbar-brand col-4" href="http://www.com-progress.fr/buvette/semaine9/accueil.html" target="_blank">EURObuvettes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav"> 
-                <li class="nav-item">
+        <div class="collapse navbar-collapse col-6" id="collapsibleNavbar">
+            <ul class="navbar-nav gap-4">
+                <li class="nav-item" >
                 <a class="nav-link" href="#Project">Le projet</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -50,6 +50,9 @@
                     <a class="nav-link" href="https://trello.com/b/a80FS9io/projet-afpa-euro-buvettes" target="_blank" style="color: #F2Cb05">Trello</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Montmo90/eurobuvettes" target="_blank">Github</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#Equipe">L'équipe</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -64,26 +67,22 @@
         
     </nav>
     <main class="container-fluid">
-        <div class="row shadow bg-body shadow min-vh-100" style="background-color: white;">
+        <div class="row shadow bg-body shadow p-3" style="background-color: white;">
             <!--############################### PRESENTATION ####################################-->
             <div class="col-md-4 text-center ">
                 <h3>Bienvenue sur le site du projet EUROBuvettes</h3>
-                <p>Ici vous trouverez toutes les infos concernant le processus de creation du projet<br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure officiis reiciendis atque nesciunt cupiditate voluptates! Sit ipsum unde reprehenderit quia blanditiis tenetur voluptatum deleniti iste, laborum sapiente numquam ad repudiandae?
-                Modi earum aperiam nam nisi ad sequi qui officiis culpa facilis, accusantium quam ab temporibus, velit pariatur voluptatum neque incidunt fugit possimus sed in autem consequuntur, exercitationem hic atque? Corporis!
-                Laudantium veritatis excepturi dicta! Praesentium totam ea, nemo reiciendis obcaecati nam eaque illum unde. Corrupti hic deleniti assumenda nisi eos laborum quaerat fugiat, labore quasi, facilis aspernatur molestias omnis veniam.
-                Porro odio magnam possimus ea, cupiditate voluptates voluptas assumenda voluptatibus ducimus adipisci maiores nostrum. Soluta, deserunt dolorem sint enim corporis eos ut nobis ullam quasi sit nisi velit possimus quas?</p>
+                <p>Au cours de ce projet, nous souhaitons mettre en place une application Web de gestion
+                    des personnels participants à la tenue des buvettes lors de l’EURO 2021.</p> 
+                <p>Il sera possible de dresser des statistiques sur les personnes les plus impliquées, de connaître les
+                    buvettes où il manque des volontaires, de voir quelles buvettes sont ouvertes et d'affecter ou retirer une personne d'une buvette.</p>
+                <p>L'application est un projet réalisé lors de la formation développeur web et web mobile de Rochefort démarré le 22 mars 2021 et finie le 26 novembre 2021</p>
+                <p>Chaque groupe de la promo dois réaliser un projet similaire et nous nous servons de ces projets pour mettre en pratique nos nouvelles connaissances. 
+                    Chaque semaine nous avons inclus toutes les nouveautés que nous avons apprises.</p>
+                <p>Le groupe est composé de 3 personnes, Fabian, Jeremy et Morgan.</p>
+                <p>Vous pouvez consulter chaque itération du projet via l'historique !</p>
             </div>
             <!-- ################################## CAROUSEL #################################-->
-            <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade col-md-4" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                </div>
+            <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade col-md-4" data-bs-ride="carousel" style="height: 426px;">
                 <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="3000">
                     <img src="img/versions/semaine1.png" class="d-block w-100" alt="...">
@@ -127,6 +126,12 @@
                     <h5>Semaine 7</h5>
                     </div>
                 </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="img/versions/semaine8.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Semaine 8</h5>
+                    </div>
+                </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -152,7 +157,7 @@
                         <p><strong>Chef de projet : </strong>Fabian</p>
                         <p><strong>Objectifs : </strong>Organisation du projet et presentation des objectifs</p>
                         <p><strong>Technologies/Outils : </strong>HTML5, CSS3, XMind, Wireframe</p>
-                        <p>L'objectif de cette première semaine aura été la comprehension du cahier des charges et la mise en place de l'organisation. le résultat aura été une première</p>
+                        <p>Comprehension du cahier des charges et mise en place de l'organisation</p>
                         </div>
                     </div>
                     </div>
@@ -164,10 +169,11 @@
                     </h2>
                     <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p><strong>Chef de projet : </strong></p>
-                            <p><strong>Objectifs : </strong></p>
-                            <p><strong>Technologies/Outils : </strong></p>
-                            <p></p>
+                            <p><strong>Chef de projet : </strong>Morgan</p>
+                            <p><strong>Objectifs : </strong>Création structure HTML</p>
+                            <p><strong>Technologies/Outils : </strong>HTML5, CSS3, Trello, Gantt</p>
+                            <p>Le première structure du site a été mise en place, Trello a également été introduit au projet pour l'organisation du projet<br>
+                            Un graphique de Gantt est egalement utilisé pour l'organisation</p>
                         </div>
                     </div>
                     </div>
@@ -179,10 +185,10 @@
                         </h2>
                         <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p><strong>Chef de projet : </strong></p>
-                                <p><strong>Objectifs : </strong></p>
-                                <p><strong>Technologies/Outils : </strong></p>
-                                <p></p>
+                                <p><strong>Chef de projet : </strong>Jeremy</p>
+                                <p><strong>Objectifs : </strong>2 Pages + Charte graphique</p>
+                                <p><strong>Technologies/Outils : </strong>HTML5, CSS3</p>
+                                <p>Les pages statistiques et acceuil ont vues leurs premières versions<br>Mise en place d'une charte graphique</p>
                             </div>
                         </div>
                     </div>
@@ -194,10 +200,10 @@
                         </h2>
                         <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p><strong>Chef de projet : </strong></p>
-                                <p><strong>Objectifs : </strong></p>
-                                <p><strong>Technologies/Outils : </strong></p>
-                                <p></p>
+                                <p><strong>Chef de projet : </strong>Fabian</p>
+                                <p><strong>Objectifs : </strong>Introduction JS, 2 pages</p>
+                                <p><strong>Technologies/Outils : </strong>HTML5, CSS3, JS, Git</p>
+                                <p>Les pages affectations et recherche membres ont été travaillées<br>Implementation de GIT au projet<br>Message erreur en JS (ES5)</p>
                             </div>
                         </div>
                     </div>
@@ -209,10 +215,10 @@
                         </h2>
                         <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p><strong>Chef de projet : </strong></p>
-                                <p><strong>Objectifs : </strong></p>
-                                <p><strong>Technologies/Outils : </strong></p>
-                                <p></p>
+                                <p><strong>Chef de projet : </strong>Morgan</p>
+                                <p><strong>Objectifs : </strong>Création de formulaires en JS (ES6)</p>
+                                <p><strong>Technologies/Outils : </strong>JS</p>
+                                <p>Création de 3 formulaires en JS, pages: prive, statistiques, recherchemembres<br>Mise en ligne du site</p>
                             </div>
                         </div>
                     </div>
@@ -224,10 +230,10 @@
                         </h2>
                         <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p><strong>Chef de projet : </strong></p>
-                                <p><strong>Objectifs : </strong></p>
-                                <p><strong>Technologies/Outils : </strong></p>
-                                <p></p>
+                                <p><strong>Chef de projet : </strong>Jeremy</p>
+                                <p><strong>Objectifs : </strong>Ajouts des données dynamiques</p>
+                                <p><strong>Technologies/Outils : </strong>JS</p>
+                                <p>Connexion des formulaires à une fausse BDD en JS (listes d'objets)</p>
                             </div>
                         </div>
                     </div>
@@ -239,10 +245,11 @@
                         </h2>
                         <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p><strong>Chef de projet : </strong></p>
-                                <p><strong>Objectifs : </strong></p>
-                                <p><strong>Technologies/Outils : </strong></p>
-                                <p></p>
+                                <p><strong>Chef de projet : </strong>Fabian</p>
+                                <p><strong>Objectifs : </strong>Refonte header/footer, Affectation JS</p>
+                                <p><strong>Technologies/Outils : </strong>CSS3, JS</p>
+                                <p>Refonte du header pour le rendre plus joli<br>
+                                Refonte du formulaire page affectation</p>
                             </div>
                         </div>
                     </div>
@@ -254,10 +261,11 @@
                         </h2>
                         <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <p><strong>Chef de projet : </strong></p>
-                                <p><strong>Objectifs : </strong></p>
-                                <p><strong>Technologies/Outils : </strong></p>
-                                <p></p>
+                                <p><strong>Chef de projet : </strong>Morgan</p>
+                                <p><strong>Objectifs : </strong>Intégration bootstrap</p>
+                                <p><strong>Technologies/Outils : </strong>Bootstrap, JS</p>
+                                <p>Apprentissage de bootstrap en remplaceant le css d'origine par le framework<br>
+                                Connexion d'un formulaire page statistiques à la fausse BDD</p>
                             </div>
                         </div>
                     </div>
@@ -276,12 +284,13 @@
             <div class="card mb-3 shadow bg-body rounded" style="max-width: 540px">
                 <div class="row g-0">
                     <div class="col-md-4 project-card">
-                        <img src="img/avatar.png" alt="..." class="img-fluid">
+                        <img src="" alt="..." class="img-fluid avaCard1">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Fabian</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">" Le fossé séparant théorie et pratique est moins large en théorie qu’il ne l’est en pratique " - Assurément pas moi</p>
+                            <p>!</p>
                             <div class="col">
                                 <a href="http://f-metayer.fr/index.html" class="fas fa-address-card col-2" title="Site" target="_blank"></a>
                                 <a href="https://github.com/Montmo90" class="fab fa-github col-2" title="Github" target="_blank"></a>
@@ -295,12 +304,12 @@
             <div class="card mb-3 shadow bg-body rounded" style="max-width: 540px">
                 <div class="row g-0">
                     <div class="col-md-4 project-card">
-                    <img src="img/avatar.png" alt="..." class="img-fluid">
+                    <img src="" alt="..." class="img-fluid avaCard2">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Jeremy</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><br>Quelle est la manière orientée objet de devenir riche ?<br><br>L'héritage !</p>
                             <div class="col">
                                 <a href="#" class="fas fa-address-card col-2" title="Site" target="_blank"></a>
                                 <a href="#" class="fab fa-github col-2" title="Github" target="_blank"></a>
@@ -314,12 +323,13 @@
             <div class="card mb-3 shadow bg-body rounded" style="max-width: 540px">
                 <div class="row g-0">
                     <div class="col-md-4 project-card">
-                        <img src="img/avatar.png" alt="..." class="img-fluid">
+                        <img src="" alt="..." class="img-fluid avaCard3">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Morgan</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"> " Si debugger, c’est supprimer des bugs, alors programmer ne peut être que les ajouter " - Quelqu'un d'autre</p>
+                            <p>!</p>
                             <div class="col">
                                 <a href="https://morgan-tranquard.fr" class="fas fa-address-card col-2" title="Site" target="_blank"></a>
                                 <a href="https://github.com/mtra7" class="fab fa-github col-2" title="Github" target="_blank"></a>
