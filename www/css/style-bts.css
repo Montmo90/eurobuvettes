@@ -12,15 +12,6 @@ Groupe B :
 @import url('footer.css');
 
 
-:root {
-    --nav-nouveautes-primaire: #bb1f11;
-    --nav-nouveautes-secondaire: #ec6608;
-
-    --nav-lien: #F2CB05;
-    --panel-fond: #d9dfdf;
-    --panel-shadow: #BC000F;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -31,11 +22,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navigation {
-    background: radial-gradient(circle, var(--nav-nouveautes-secondaire) 49%, var(--nav-nouveautes-primaire) 88%);
+    background: #042c50;
+    background: radial-gradient(circle, #042c50 49%, rgba(123,177,221,1) 88%);
 }
 
 .navlien li > a {
-    color: var(--nav-lien);
+    color: #F2CB05;
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: bold;
@@ -43,12 +35,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navlien a.active {
-    border-bottom: var(--nav-lien) solid 3px;
+    border-bottom: #F2CB05 solid 3px;
 }
 
 .navlien a:hover {
-    color: var(--nav-lien);
-    border-bottom: var(--nav-lien) solid 3px;
+    color: #F2CB05;
+    border-bottom: #F2CB05 solid 3px;
 }
 
 /* ============== Scrollbar ========================== */
@@ -66,8 +58,8 @@ body {
 
 /* ============== PANEL ================================= */
 .panel {
-    background-color: var(--panel-fond);    
-    box-shadow: 5px 5px var(--nav-nouveautes-secondaire);
+    background-color: #d9dfdf;    
+    box-shadow: 5px 5px #BC000F;
     border-radius: 5px;
 }
 
@@ -90,14 +82,14 @@ body {
 }
 
 .buvExpand {
-    background-color: var(--panel-fond);
+    background-color: #d9dfdf;
 }
 
 .accordion-item-custom {
-    background-color: var(--panel-fond);
+    background-color: #d9dfdf;
 }
 
 .accordion-button-custom:not(.collapsed) {
     color : #171C60;
-    background-color: var(--panel-fond);
+    background-color: #d9dfdf;
 }
