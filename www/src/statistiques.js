@@ -22,8 +22,8 @@ function getStats() {
     var topVol = userInput("#TopVol").checked;
     var topBuv = userInput("#TopBuv").checked;
     var match = userInput("#matchs").value;
-    var headerD = `<table class="table table-striped panel container mt-3"><thead ><th colspan="2">`
-    var headerF = `</th></thead></div>`;
+    var headerD = "<div class=\"resultat-membres-header\"><span>";
+    var headerF = "</span></div>";
     var divContent = "";
     var value = "";
     // Si input vide, renvoyez pas de resultat
@@ -71,16 +71,15 @@ function topVolontaires () {
         topVolName = listeVolontaires[i].nom;
         topVolNbPart = listeVolontaires[i].nbPart;
 
-        content +=`<tr>
-                    <td>
+        content +=`<div class="resultat-membres-item center">
+                    <span>
                         ${topVolName}
-                    </td>
-                    <td>
+                    </span>
+                    <span>
                         ${topVolNbPart} participation(s)
-                    </td>
-                    </tr>`;
+                    </span>
+                    </div>`;
     }
-    content += `</table>`;
     return content;
 
 }
@@ -102,16 +101,15 @@ function topBuvettes () {
         topBuvName = listeBuvettes[i].nom;
         topBuvPlace = listeBuvettes[i].lieu;
 
-        content += `<tr>
-                        <td>
+        content += `<div class="resultat-membres-item center">
+                        <span>
                             ${topBuvName}
-                        </td>
-                        <td>
+                        </span>
+                        <span>
                             ${topBuvPlace}
-                        </td>
-                    </tr>`;
+                        </span>
+                    </div>`;
     }
-    content += `</table>`;
     return content;
 
 }
