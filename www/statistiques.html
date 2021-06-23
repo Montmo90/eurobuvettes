@@ -52,37 +52,32 @@ Groupe B :
     </div>
 
     <!--        Main            -->
-    <main class="hauteurTest">
-        <div class="center panel">
-            <form class="formulaireStats">
-                <div>
-                    Top Volontaires <input type="checkbox" name="Top Volontaires" id="TopVol">
+    <div class="container-fluid hauteurTest py-3">
+        <div class="container-md panel py-2">
+            <form class="formulaireStats row row-cols-lg-auto align-items-center justify-content-center">
+                <div class="col-12">
+                    <label class="form-check-label">Top Volontaires</label> 
+                    <input class="form-check-input me-lg-auto" type="checkbox" name="Top Volontaires" id="TopVol">
                 </div>
-                <div>
-                    Top Buvettes <input type="checkbox" name="Top Buvettes" id="TopBuv">
+                <div class="col-12">
+                    <label class="form-check-label">Top Buvettes</label> 
+                    <input class="form-check-input me-lg-auto" type="checkbox" name="Top Buvettes" id="TopBuv">
                 </div>
-                <div>
-                    <label for="stats">Liste des matchs </label>
+                <div class="col-12">
+                    <label>Liste des matchs </label>
                     <input list="listeMatchs" id="matchs" name="matchs"/>
                     <datalist id="listeMatchs">
-                     <!--  <option value="01-01-2021">France - Roumanie</option>
-                        <option value="02-01-2021">Albanie - Suède</option>
-                        <option value="03-01-2021">Galles - Slovenie</option>
-                        <option value="04-01-2021">Angleterre - Russie</option>
-                        <option value="05-01-2021">Turquie - Croatie</option>
-                        <option value="06-01-2021">Pologne - Irlande</option>
-                        <option value="07-01-2021">Allemagne - Ukraine</option>
-                        <option value="08-01-2021">Espagne - Republique Tcheque</option> --> 
+                     
                     </datalist>
                 </div>
                 <div>
-                    <input type="button" value="Rechercher" onclick="getStats()">
+                    <input class="btn btn-primary" type="button" value="Rechercher" onclick="getStats()">
                 </div>
               </form>
         </div>
-        <div class="stats panel">
+        <div class="stats text-center table-responsive">
         </div>
-    </main>
+    </div>
 
     <!--        Footer          -->
     <footer class="container-fluid py-2">
