@@ -18,13 +18,13 @@ function accueil() {
             <div class="col">
               <div class="row">
                 <div class="col-sm-5">
-                  <img src="${listeMatch[i].teamA.drapeau}" alt="drapeau ${listeMatch[i].teamA.pays}" class="buvettesImgDrapeau img-fluid">
+                  <img src="../../${listeMatch[i].teamA.drapeau}" alt="drapeau ${listeMatch[i].teamA.pays}" class="buvettesImgDrapeau img-fluid">
                 </div>
                 <div class="col-sm-2">
                 VS
                 </div>
                 <div class="col-sm-5">
-                  <img src="${listeMatch[i].teamB.drapeau}" alt="drapeau ${listeMatch[i].teamB.pays}" class="buvettesImgDrapeau img-fluid">
+                  <img src="../../${listeMatch[i].teamB.drapeau}" alt="drapeau ${listeMatch[i].teamB.pays}" class="buvettesImgDrapeau img-fluid">
                 </div>
               </div>
             </div>
