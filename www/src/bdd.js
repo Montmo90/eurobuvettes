@@ -32,22 +32,22 @@ function Equipe (id, pays, drapeau) {
     this.drapeau = drapeau;
 }
 
-var listeEquipe = [new Equipe("fr", "FRANCE", "img/fr.webp"),
-                   new Equipe("alb", "ALBANIE", "img/alb.webp"),
-                   new Equipe("ga", "GALLES", "img/ga.webp"),
-                   new Equipe("an", "ANGLETERRE", "img/gb.webp"),
-                   new Equipe("tu", "TURQUIE", "img/tr.webp"),
-                   new Equipe("po", "PORTUGAL", "img/pt.webp"),
-                   new Equipe("al", "ALLEMAGNE", "img/de.webp"),
-                   new Equipe("es", "ESPAGNE", "img/es.webp"),
-                   new Equipe("ro", "ROUMANIE", "img/ro.webp"),
-                   new Equipe("su", "SUEDE", "img/se.webp"),
-                   new Equipe("sl", "SLOVENIE", "img/sl.webp"),
-                   new Equipe("ru", "RUSSIE", "img/ru.webp"),
-                   new Equipe("cr", "CROATIE", "img/cr.webp"),
-                   new Equipe("ir", "IRLANDE", "img/ir.webp"),
-                   new Equipe("uk", "UKRAINE", "img/ua.webp"),
-                   new Equipe("rt", "REPUBLIQUE TCHEQUE", "img/cz.webp")];
+var listeEquipe = [new Equipe("fr", "FRANCE", "img/flags/fr.webp"),
+                   new Equipe("alb", "ALBANIE", "img/flags/alb.webp"),
+                   new Equipe("ga", "GALLES", "img/flags/ga.webp"),
+                   new Equipe("an", "ANGLETERRE", "img/flags/gb.webp"),
+                   new Equipe("tu", "TURQUIE", "img/flags/tr.webp"),
+                   new Equipe("po", "PORTUGAL", "img/flags/pt.webp"),
+                   new Equipe("al", "ALLEMAGNE", "img/flags/de.webp"),
+                   new Equipe("es", "ESPAGNE", "img/flags/es.webp"),
+                   new Equipe("ro", "ROUMANIE", "img/flags/ro.webp"),
+                   new Equipe("su", "SUEDE", "img/flags/se.webp"),
+                   new Equipe("sl", "SLOVENIE", "img/flags/sl.webp"),
+                   new Equipe("ru", "RUSSIE", "img/flags/ru.webp"),
+                   new Equipe("cr", "CROATIE", "img/flags/cr.webp"),
+                   new Equipe("ir", "IRLANDE", "img/flags/ir.webp"),
+                   new Equipe("uk", "UKRAINE", "img/flags/ua.webp"),
+                   new Equipe("rt", "REPUBLIQUE TCHEQUE", "img/flags/cz.webp")];
 
 /*Création du constructeur Buvette*/
 function Buvette(ouvert, nom, lieu, nbVol, listVol, resp) {
