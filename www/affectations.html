@@ -10,15 +10,15 @@ Groupe B :
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/style-bts.css">
-        <title>Eurobuvettes 2021</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style-bts.css">
+    <title>Eurobuvettes 2021</title>
+</head>
 
 
 <body onload="startAffectations()">
@@ -36,24 +36,25 @@ Groupe B :
     </div>
     <!--        Menu navigation du header           -->
     <div class="navbar navbar-expand-lg navigation p-0">
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav navlien">
-                    <li class="nav-item"><a class ="nav-link mx-3"href="accueil.html">Nouveautés</a></li>
-                    <li class="nav-item"><a class ="nav-link mx-3" href="statistiques.html">Statistiques</a></li>
-                    <li class="nav-item"><a class ="nav-link mx-3" href="recherchemembres.html">Membres</a></li>
-                    <li class="nav-item"><a class ="nav-link mx-3 active" href="affectations.html">Affectations</a></li>
-                    <li class="nav-item"><a class ="nav-link mx-3" href="prive.html">Administrateur</a></li>
-                </ul>
-            </div>
-        </div>           
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav navlien">
+                <li class="nav-item"><a class="nav-link mx-3" href="accueil.html">Nouveautés</a></li>
+                <li class="nav-item"><a class="nav-link mx-3" href="statistiques.html">Statistiques</a></li>
+                <li class="nav-item"><a class="nav-link mx-3" href="recherchemembres.html">Membres</a></li>
+                <li class="nav-item"><a class="nav-link mx-3 active" href="affectations.html">Affectations</a></li>
+                <li class="nav-item"><a class="nav-link mx-3" href="prive.html">Administrateur</a></li>
+            </ul>
+        </div>
+    </div>
     </div>
 
     <!--        Main            -->
     <main class="hauteurTest">
-        <div class="panel">
+        <!-- <div class="panel">
             <div class="divAffect">
                 <input type="button" value="Affecter un volontaire" id="btnAffecter" onclick=AfficheFormVolontaire()>
                 <input type="button" value="Statut buvette" id="btnOuvrir" onclick=AfficheFormBuvette()>
@@ -90,6 +91,61 @@ Groupe B :
                 <input type="button" value="Ouvrir" onclick="confirmation(true)" id="btnOuvrirBuvette" disabled>
                 <input type="button" value="Fermer" onclick="confirmation(false)" id="btnFermerBuvette" disabled>
             </form>
+        </div>-->
+
+        <div class="d-flex align-items-start panel">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                    aria-selected="true">Affecter un volontaire</button>
+                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                    aria-selected="false">Statut de buvette</button>
+            </div>
+            <!--    Affichage bouton Affecter un volontaire     -->
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                    aria-labelledby="v-pills-home-tab">
+                    <form id="choixVol" class="formAffect">
+                        <span>Match :</span>
+                        <select id="match_list" onchange="changeListBuvettes('buvette_list', this)">
+                            <option selected>
+                            <!--        Insertion liste matchs          -->
+                            </option>
+                        </select>
+                        <span>Buvette :</span>
+                        <select id="buvette_list">
+                            <!--        Insertion liste buvettes        -->
+                        </select>
+                        <span>Volontaire :</span>
+                        <input type="text" list="volontaire_list" name="volontaire">
+                        <datalist id="volontaire_list">
+                            <!--        Insertion listes volontaires        -->
+                        </datalist>
+                        <span>Responsable :</span>
+                        <input type="checkbox">
+                        <input type="submit">
+                        <input type="reset" onclick="clearAffect('buvette_list')">
+                    </form>
+                </div>
+                <!--    Affichage bouton statut de buvette     -->
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <form id="choixBuv" class="formAffect">
+                        <span>Match :</span>
+                        <select id="match_list2" onchange="changeListBuvettes('buvette_list2',this)">
+                            <option selected></option>
+                        </select>
+                        <span>Buvette :</span>
+                        <select id="buvette_list2" onchange="selectBuvettes()">
+                        </select>
+                        <span id="statut">Statut : ?</span>
+                        <input type="button" value="Ouvrir" onclick="confirmation(true)" id="btnOuvrirBuvette" disabled>
+                        <input type="button" value="Fermer" onclick="confirmation(false)" id="btnFermerBuvette"
+                            disabled>
+                    </form>
+                </div>
+            </div>
+        </div>
         </div>
     </main>
 
@@ -99,10 +155,13 @@ Groupe B :
             <p class="my-1">&copy; Eurobuvettes 2021</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="src/bdd.js"></script>
     <script src="src/main.js"></script>
     <script src="src/affectations.js"></script>
 </body>
+
 </html>
