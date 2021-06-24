@@ -17,6 +17,7 @@ Groupe B :
     --nav-nouveautes-secondaire: #bb1f11;
 
     --nav-lien: #F2CB05;
+
     --panel-fond: #d9dfdf;
 
     --font-color: #171C60;
@@ -82,10 +83,13 @@ body {
     color:var(--font-color);
 }
 
-
 .hauteurTest  {
     background-color: var(--background);
     height:700px;
+}
+
+.fondCouleur {    
+    background-color: var(--background);
 }
 
 .custom-toggler .navbar-toggler-icon {

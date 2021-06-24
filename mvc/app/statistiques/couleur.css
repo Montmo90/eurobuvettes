@@ -1,11 +1,12 @@
 :root {
-    --nav-nouveautes-primaire: #ec6608;
-    --nav-nouveautes-secondaire: #bb1f11;
+    --nav-nouveautes-primaire: #83D0F5;
+    --nav-nouveautes-secondaire: #01B2EB;
 
-    --nav-lien: #F2CB05;
-    --panel-fond: #d9dfdf;
+    --nav-lien: white;
 
-    --font-color: #171C60;
+    --panel-fond: #F4F6F7;
 
-    --background: #C8CBD0;
+    --font-color: #0084A4;
+
+    --background: #C8D2D5;
 }
