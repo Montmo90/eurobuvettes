@@ -109,7 +109,7 @@ function topBuvettes () {
                         <td>
                             ${topBuvPlace}
                         </td>
-                        </tr>`;
+                    </tr>`;
     }
     content += `</table>`;
     return content;
