@@ -20,12 +20,12 @@ function rechercheMembres() {
             if(resultat == "")
                 resultat += `<table class="table table-striped panel container mt-3 text-center">
                                 <thead>
-                                    <tr>
+                                    
                                         <th scope="col">Nom</th>
                                         <th scope="col">Age</th>
                                         <th scope="col">Participations</th>
                                         <th scope="col">Responsable ?</th>
-                                    </tr>
+                                    
                                 </thead>`;
 
             resultat += `<tr>
@@ -39,15 +39,12 @@ function rechercheMembres() {
             count++;
         }
     }
-
+    resultat += "</table>";
     if(pasResultat)
         resultat += `<div class="panel container my-3"><div class="fs-3 text-center noResultat fw-bold">Pas de résultat !</div></div>`;
     else
-        resultat += `<caption>${count} résultat(s) trouvé(s).</caption>`;
-        
-
-    resultat += "</table>";
-    
+        resultat += `<div class="container"><caption>${count} résultat(s) trouvé(s).</caption></div>`;
+           
     //Affichage de la section resultat et intégration du résultat
     document.getElementById("resultat").hidden = false;
     document.getElementById("resultat").innerHTML = resultat;
