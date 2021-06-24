@@ -18,7 +18,7 @@ function rechercheMembres() {
         if(trouve || (respBuvette && respBuvetteOui == listeVolontaires[j].resp) || (respBuvette && !respBuvetteNon == listeVolontaires[j].resp)) {
             //Création du Header des résultats
             if(resultat == "")
-                resultat += `<table class="table table-striped panel container mt-3">
+                resultat += `<table class="table table-striped panel container mt-3 text-center">
                                 <thead>
                                     <tr>
                                         <th scope="col">Nom</th>
@@ -29,10 +29,10 @@ function rechercheMembres() {
                                 </thead>`;
 
             resultat += `<tr>
-                            <td>${listeVolontaires[j].nom}</td>
-                            <td>${listeVolontaires[j].age}</td>
-                            <td>${listeVolontaires[j].nbPart}</td>
-                            <td>${(listeVolontaires[j].resp == true ? "Oui" : "Non")}</td>
+                            <td class="w-25">${listeVolontaires[j].nom}</td>
+                            <td class="w-25">${listeVolontaires[j].age}</td>
+                            <td class="w-25">${listeVolontaires[j].nbPart}</td>
+                            <td class="w-25">${(listeVolontaires[j].resp == true ? "Oui" : "Non")}</td>
                         </tr>`;
             pasResultat = false;
 
