@@ -107,6 +107,11 @@ body {
     background-color: var(--panel-fond);
 }
 
+.btn-custom {
+    background-color: var(--nav-nouveautes-primaire);
+    color: var(--nav-lien);
+}
+
 /* ============== FOOTER ================================== */
 
 footer {

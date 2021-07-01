@@ -23,34 +23,9 @@ Groupe B :
 
 <body class="vh-100 d-flex flex-column">
 
-    <!--    Header      -->
-    <div class="container-fluid my-2">
-        <div class="row d-flex align-items-end">
-            <div class="col-lg-1">
-                <img src="../../img/UEFA_Euro_2020_logo.png" alt="logo eurobuvette 2021" class="img-fluid">
-            </div>
-            <div class="col-lg-11">
-                <h1>EUROBuvettes</h1>
-                <h2>Le site de gestion des buvettes de l'EURO 2021 !</h2>
-            </div>
-        </div>
-    </div>
-    <!--        Menu navigation du header           -->
-    <div class="navbar navbar-expand-lg navigation p-0">
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav navlien">
-                    <li class="nav-item"><a class ="nav-link mx-3"href="../accueil/accueil.html">Nouveautés</a></li>
-                    <li class="nav-item"><a class ="nav-link mx-3" href="../statistiques/statistiques.html">Statistiques</a></li>
-                    <li class="nav-item"><a class ="nav-link mx-3 active" href="../membres/recherchemembres.html">Membres</a></li>
-                    <li class="nav-item"><a class ="nav-link mx-3" href="../affectations/affectations.html">Affectations</a></li>
-                    <li class="nav-item"><a class ="nav-link mx-3" href="../prive/prive.html">Administrateur</a></li>
-                </ul>
-            </div>
-        </div>           
-    </div>
+    <!--    Header      -->   
+    <?php include('../../template/header.php'); ?>
+
     <!--        Main            -->
     <div class="container-fluid pt-3">
         <div id="rechercheMembres" class="container-md panel py-2">        
@@ -80,7 +55,7 @@ Groupe B :
                     </div>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary" onclick="rechercheMembres()">Rechercher</button>
+                    <button type="button" class="btn btn-custom" onclick="rechercheMembres()">Rechercher</button>
                 </div>                
             </form>
         </div>      
@@ -88,15 +63,11 @@ Groupe B :
             <!--Résultat de la recherche ajouté via JS-->
         </div>
     </div>
+
     <!--        Footer          -->
-    <footer class="container-fluid py-2 mt-auto">
-        <div class="row text-center ">
-            <p class="my-1">&copy; Eurobuvettes 2021</p>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../../src/bdd.js"></script>
+    <?php include('../../template/footer.php'); ?>
+
+    <!--        JS          -->
     <script src="recherchemembre.js"></script>
     
 </body>
