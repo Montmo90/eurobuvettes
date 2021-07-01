@@ -120,6 +120,14 @@ body {
     background-position: center 0;
 }
 
+/* ============== ASIDE ================================== */
+
+.annexeAccueil {
+    background: radial-gradient(circle, var(--nav-nouveautes-primaire) 49%, var(--nav-nouveautes-secondaire) 88%);
+    color: var(--nav-lien);
+    font-family: 'Varela Round', sans-serif;
+}
+
 /* ============== FOOTER ================================== */
 
 footer {

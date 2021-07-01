@@ -7,10 +7,10 @@ function accueil() {
         // ligne 15 <p>${listVol.length} volontaire${listVol.length > 1 ? "s" : ""} participant${listVol.length > 1 ? "s" : ""} à la buvette</p>
         let buvette = 
         `
-  <div class="accordion accordion-flush panel mx-0" id="accordionFlushExample">
+  <div class="accordion accordion-flush panel mx-0 mb-4" id="accordionFlushExample">
     <div class="accordion-item accordion-item-custom">
       <div class="accordion-header" id="flush-heading${i}">
-        <button class="accordion-button collapsed buvExpand accordion-button-custom row" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapse${i}">   
+        <button class="accordion-button collapsed buvExpand accordion-button-custom row mx-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${i}" aria-expanded="false" aria-controls="flush-collapse${i}">   
          
             <div class="col">
               ${listeMatch[i].buvette.ouvert ? "Ouvert" : "Fermée"}
