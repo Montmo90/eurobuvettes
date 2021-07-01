@@ -20,7 +20,7 @@ Groupe B :
 
     --font-color: #171C60;
 
-    --background: #C8CBD0;
+    --background: #f4f3f2;
 }
 
 body {
@@ -110,6 +110,14 @@ body {
 .btn-custom {
     background-color: var(--nav-nouveautes-primaire);
     color: var(--nav-lien);
+}
+
+/* ============== MAIN ================================== */
+
+.main{
+    background: url(../img/standings-bg.webp);
+    background-repeat: no-repeat;
+    background-position: center 0;
 }
 
 /* ============== FOOTER ================================== */

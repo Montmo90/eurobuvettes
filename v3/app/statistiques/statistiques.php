@@ -27,7 +27,7 @@ Groupe B :
     <?php include('../../template/header.php'); ?>
 
     <!--        Main            -->
-    <div class="container-fluid py-3">
+    <div class="container-fluid  main py-3 h-100 ">
         <div class="container-md panel py-2">
             <form class="formulaireStats row row-cols-lg-auto align-items-center justify-content-center">
                 <div class="col-12">
