@@ -24,10 +24,10 @@ Groupe B :
 <body onload="listStatMatch()" class="vh-100 d-flex flex-column">
 
     <!--    Header      -->   
-    <?php include('../../template/header.php'); ?>
+    <?php require('../../template/header.php'); ?>
 
     <!--        Main            -->
-    <div class="container-fluid  main py-3 h-100 ">
+    <div class="container-fluid  main py-3 h-100">
         <div class="container-md panel py-2">
             <form class="formulaireStats row row-cols-lg-auto align-items-center justify-content-center">
                 <div class="col-12">
@@ -54,7 +54,7 @@ Groupe B :
     </div>
 
     <!--        Footer          -->
-    <?php include('../../template/footer.php'); ?>
+    <?php require('../../template/footer.php'); ?>
 
     <!--        JS          -->
     <script src="statistiques.js"></script>

@@ -24,10 +24,10 @@ Groupe B :
 <body onload="startAffectations()" class="vh-100 d-flex flex-column">
 
     <!--    Header      -->   
-    <?php include('../../template/header.php'); ?>
+    <?php require('../../template/header.php'); ?>
 
     <!--        Main            -->
-    <main class="py-3">        
+    <main class="py-3 main h-100">        
         <div class="panel container">
             <nav class="pt-3">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -102,7 +102,7 @@ Groupe B :
     </main>
 
     <!--        Footer          -->
-    <?php include('../../template/footer.php'); ?>
+    <?php require('../../template/footer.php'); ?>
 
     <!--        JS          -->
     <script src="affectations.js"></script>

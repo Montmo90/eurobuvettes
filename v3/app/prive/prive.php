@@ -24,21 +24,26 @@ Groupe B :
 <body class="vh-100 d-flex flex-column">
 
     <!--    Header      -->   
-    <?php include('../../template/header.php'); ?>
+    <?php require('../../template/header.php'); ?>
 
     <!--        Main            -->
-    <main class="center">        
-        <section>
-            <form class="panel" name="formulaireConnexion">
-                    <p>Veuillez saisir le mot de passe pour accéder au panel administrateur.</p><br>
-                    <input type="password" name="mdp" id="mdp" placeholder="Mot de passe"><br>
-                    <input type="submit" value="Connexion" onclick="LogAdmin()">
+    <main class="center main py-3 h-100">        
+        <div class="container-md panel py-2 text-center">
+            <p>Veuillez saisir le mot de passe pour accéder au panel administrateur.</p>
+            <form class="row align-items-center justify-content-center"  name="formulaireConnexion">
+                    <div class="col-lg-4">
+                        <input class="form-control" type="password" name="mdp" id="mdp" placeholder="Mot de passe">
+                    </div>
+                    <div class="col-12 pt-2">
+                        <input class="btn btn-custom" type="submit" value="Connexion" onclick="LogAdmin()">  
+                    </div>
+                    
             </form>
-        </section>
+        </div>
     </main>
 
     <!--        Footer          -->
-    <?php include('../../template/footer.php'); ?>
+    <?php require('../../template/footer.php'); ?>
 
     <!--        JS          -->
     <script src="prive.js"></script>
