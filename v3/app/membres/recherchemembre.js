@@ -18,7 +18,7 @@ function rechercheMembres() {
         if(trouve || (respBuvette && respBuvetteOui == listeVolontaires[j].resp) || (respBuvette && !respBuvetteNon == listeVolontaires[j].resp)) {
             //Création du Header des résultats
             if(resultat == "")
-                resultat += `<table class="table table-striped panel container mt-3">
+                resultat += `<table class="table table-striped panel container mt-3 mb-0">
                                 <thead>
                                     <tr>
                                         <th scope="col">Nom</th>

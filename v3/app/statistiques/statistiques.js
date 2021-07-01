@@ -22,8 +22,8 @@ function getStats() {
     var topVol = userInput("#TopVol").checked;
     var topBuv = userInput("#TopBuv").checked;
     var match = userInput("#matchs").value;
-    var headerD = "<div class=\"resultat-membres-header\"><span>";
-    var headerF = "</span></div>";
+    var headerSelect = 0;
+    var headerF = `</th></thead></div>`;
     var divContent = "";
     var value = "";
     // Si input vide, renvoyez pas de resultat
@@ -33,20 +33,24 @@ function getStats() {
         if (topVol == true && topBuv == false && !match) {
             divContent = topVolontaires();
             value = "Top Volontaires";
+            headerSelect = 2;
         }
     else
         if (topBuv == true && topVol == false && !match) {
             divContent = topBuvettes();
             value = "Top Buvettes";
+            headerSelect = 2;
         }
     else
         if (match && topVol == false && topBuv == false) {
-            value = "Match (" + match + ") :";
+            value = "Match du " + match;
             divContent = currentMatch(match);
+            headerSelect = 3;
         }
     else {
         value = "Trop d'arguments !";
     }
+    var headerD = `<table class="table table-striped panel container mt-3 align-middle"><thead ><th colspan="${headerSelect}">`;
     stats.innerHTML = headerD + value + headerF + divContent;
     // reinitialise le champ du formulaire
     uncheck();
@@ -71,15 +75,16 @@ function topVolontaires () {
         topVolName = listeVolontaires[i].nom;
         topVolNbPart = listeVolontaires[i].nbPart;
 
-        content +=`<div class="resultat-membres-item center">
-                    <span>
+        content +=`<tr>
+                    <td class="w-50">
                         ${topVolName}
-                    </span>
-                    <span>
+                    </td>
+                    <td>
                         ${topVolNbPart} participation(s)
-                    </span>
-                    </div>`;
+                    </td class="w-50">
+                    </tr>`;
     }
+    content += `</table>`;
     return content;
 
 }
@@ -101,15 +106,16 @@ function topBuvettes () {
         topBuvName = listeBuvettes[i].nom;
         topBuvPlace = listeBuvettes[i].lieu;
 
-        content += `<div class="resultat-membres-item center">
-                        <span>
+        content += `<tr>
+                        <td class="w-50">
                             ${topBuvName}
-                        </span>
-                        <span>
+                        </td>
+                        <td class="w-50">
                             ${topBuvPlace}
-                        </span>
-                    </div>`;
+                        </td >
+                    </tr>`;
     }
+    content += `</table>`;
     return content;
 
 }
@@ -124,40 +130,38 @@ function currentMatch(match) {
         if (listeMatch[i].date == match)
             var id = listeMatch[i];
     }
-        infosFlag = `<div>
-                        <div>
-                            <div class="statsMatch">
-                                <div>
-                                    <img width"80" height="60" src="${id.teamA.drapeau}">
-                                </div>
-                                
-                                <div>
-                                </div>
-                                <div>
-                                <img width="80" height="60" src="${id.teamB.drapeau}">
-                                </div>
-                    </div>`;
-        
-        infosMatch = `<div class="center statsMatch">
+        infosFlag = `<tr>
+                        <td style="width:33.33%">
+                            <img width"80" height="60" src="../../${id.teamA.drapeau}">
+                        </td>
+                        <td style="width:33.33%">
+                            ${id.score}
+                        </td>
+                        <td style="width:33.33%">
+                        <img width="80" height="60" src="../../${id.teamB.drapeau}">
+                        </td>
+                     </tr>`;
+                             
+        infosMatch = `<tr>
                         
-                        <div>${id.teamA.pays}</div>
+                        <td style="width:33.33%">${id.teamA.pays}</td>
                         
-                        <div>${id.score}</div>
+                        <td style="width:33.33%"></td>
                         
-                        <div>${id.teamB.pays}</div>
+                        <td style="width:33.33%">${id.teamB.pays}</td>
                         
-                        </div>
+                        </tr>
                     `;  
-        InfosBuvettes = `<div class="center statsMatch">
+        InfosBuvettes = `<tr>
                             
-                            <div>Buvette : ${id.buvette.nom}</div>
+                            <td style="width:33.33%">Buvette : ${id.buvette.nom}</td>
                             
-                            <div>Lieu : ${id.buvette.lieu}</div>
+                            <td style="width:33.33%">Lieu : ${id.buvette.lieu}</td>
                             
-                            <div>Responsable : ${id.buvette.resp}</div>
-                        </div>
+                            <td style="width:33.33%">Responsable : ${id.buvette.resp}</td>
+                        </tr>
                         `;
-        content += infosFlag + infosMatch + InfosBuvettes;
+        content += infosFlag + infosMatch + InfosBuvettes + `</table>`;
     return content;
 }
 
