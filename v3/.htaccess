@@ -1,0 +1,5 @@
+#Permet de choisir un index différent
+DirectoryIndex app/acceil/accueil.php
+
+#Si il y a une erreur alors on renvois vers la page d'accueil
+ErrorDocument 404 app/acceil/accueil.php
