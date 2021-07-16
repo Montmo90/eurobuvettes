@@ -28,7 +28,7 @@ Groupe B :
 
     <!--        Main            -->
     <main class="center main py-3 h-100">        
-        <div class="container-md panel py-2 text-center">
+        <div class="container-md panel py-2 text-center targetP">
             <p>Veuillez saisir le mot de passe pour accéder au panel administrateur.</p>
             <form class="row align-items-center justify-content-center"  name="formulaireConnexion">
                     <div class="col-lg-4">

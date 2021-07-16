@@ -1,4 +1,4 @@
-const MDP = "admin123";
+const MDP = "";
 
 /*Création du constructeur Volontaire*/
 function Volontaire (nom, age, nbPart, resp) {
