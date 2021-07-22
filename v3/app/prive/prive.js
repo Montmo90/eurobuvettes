@@ -11,7 +11,7 @@ function LogAdmin (){
     </nav>
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-volontaire" role="tabpanel" aria-labelledby="nav-volontaire-tab">
-                <form class="row align-items-start justify-content-center p-2" name="formPriveVol">
+                <form class="row align-items-start justify-content-center p-2" name="formPriveVol" action="ajoutVol.php" method="POST">
                     <div class="col-lg-6">
                         <p>Ajouter un volontaire</p>
                         <div class="col-12 pb-3">
@@ -24,6 +24,8 @@ function LogAdmin (){
                             <input class="btn btn-custom" type="submit" value="Ajouter">
                         </div>
                     </div>
+                </form>
+                <form>    
                     <div class="col-lg-6">
                         <p>Effacer un volontaire</p>
                         <div class="col-12">

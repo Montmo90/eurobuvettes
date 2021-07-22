@@ -29,16 +29,29 @@ Groupe B :
     <!--        Main            -->
     <main class="center main py-3 h-100">        
         <div class="container-md panel py-2 text-center targetP">
-            <p>Veuillez saisir le mot de passe pour accéder au panel administrateur.</p>
-            <form class="row align-items-center justify-content-center"  name="formulaireConnexion">
-                    <div class="col-lg-4">
-                        <input class="form-control" type="password" name="mdp" id="mdp" placeholder="Mot de passe">
-                    </div>
-                    <div class="col-12 pt-2">
-                        <input class="btn btn-custom" type="submit" value="Connexion" onclick="LogAdmin()">  
-                    </div>
-                    
-            </form>
+
+        <?php
+            session_start();
+
+            if(isset($_POST["mdp"])) {
+                if($_POST["mdp"] == "") {
+                    $_SESSION['admin'] = "";
+                } else {
+                    echo "Mauvais mdp";
+                }
+            }
+
+            if(isset($_SESSION['admin']) == false) {
+                require_once("connection.php");
+            } else {
+                require_once("forms.php");
+            }
+
+        ?>
+
+
+
+
         </div>
     </main>
 
