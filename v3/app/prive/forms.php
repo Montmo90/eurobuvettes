@@ -4,6 +4,7 @@ if(session_status() != 2)
 
 if(isset($_SESSION['admin']) == false) {
     header("Location: prive.php");
+    die();
 }
 
 ?>
@@ -45,7 +46,7 @@ if(isset($_SESSION['admin']) == false) {
 
                                 $pdo = new Connect;
 
-                                $resultat = $pdo->connection()->query("SELECT `idVolontaire` as id, `nomVolontaire` as nom, `ageVolontaire` as age FROM `volontaire` WHERE 1");
+                                $resultat = $pdo->connection()->query("SELECT `idVolontaire` as id, `nomVolontaire` as nom, `ageVolontaire` as age FROM `volontaire`");
 
                                 $liste = $resultat->fetchAll(PDO::FETCH_ASSOC);
 

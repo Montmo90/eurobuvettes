@@ -9,7 +9,7 @@ Groupe B :
 <?php
 //permet de mettre dans un tableau l'url en séparant avec le /
 $url =  explode('/', rtrim($_GET['url'], '/'));
-//msg($url);
+//var_dump($url);
 //$url[0] => le controleur
 //$url[1] => l'action donc la logique
 //$url[2] => les paramétres

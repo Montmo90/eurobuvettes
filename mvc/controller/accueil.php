@@ -8,8 +8,15 @@ Groupe B :
 -->
 <?php
 class Accueil extends Controller {
-    function __contruct() {
-        
+
+    function begin(&$name) {
+        $name = self::class;
     }
+
+    function start() {
+        $matchs = $this->model->getAllMatch();
+        $this->render("accueil", $matchs);
+    }
+
 }
 ?>

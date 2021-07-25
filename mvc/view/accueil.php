@@ -2,6 +2,8 @@
     <section class="accueil row" id="buvettes">
         <section class="buvettesSlot col-lg-8">                
             <!--Emplacement des buvettes ajouté via JS-->
+            <?php var_dump($data) ?>
+
         </section>
         <!-- Aside annexe accueil   -->
         <aside class="annexeAccueil col-lg-4 rounded-1 py-3">

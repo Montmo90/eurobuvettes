@@ -7,7 +7,32 @@ Groupe B :
             Morgan Tranquard
 -->
 <?php
-class Controller {
-    protected $page;
+
+require_once("icontroller.php");
+
+abstract class Controller implements IController{
+    public $nameClass;
+    public $model;
+
+    function __construct() {
+        $this->begin($this->nameClass);
+
+        require_once("model/". $this->nameClass .".php");
+        $n = "M_".$this->nameClass;
+        $this->model = new $n();
+
+        $this->start();
+    }
+
+    public function render(string $fichier, array $data = []) {
+        ob_start();
+
+        require_once("view/".$fichier.".php");
+
+        $content = ob_get_clean();
+
+        require_once("view/layout/default.php");
+    }
+
 }
 ?>
