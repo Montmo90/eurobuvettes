@@ -25,6 +25,8 @@ abstract class Controller implements IController{
     }
 
     public function render(string $fichier, array $data = []) {
+        extract($data);
+
         ob_start();
 
         require_once("view/".$fichier.".php");

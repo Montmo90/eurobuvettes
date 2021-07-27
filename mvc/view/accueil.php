@@ -2,7 +2,56 @@
     <section class="accueil row" id="buvettes">
         <section class="buvettesSlot col-lg-8">                
             <!--Emplacement des buvettes ajouté via JS-->
-            <?php var_dump($data) ?>
+            <!--<pre>
+            <?php print_r($matchs); ?>
+            </pre>-->
+            <?php foreach($matchs as $match): ?>
+                <div class="accordion accordion-flush panel mx-0 mb-4" id="accordionFlushExample">
+                    <div class="accordion-item accordion-item-custom">
+                        <div class="accordion-header" id="flush-heading<?= $match['idMatch'] ?>">
+                            <button class="accordion-button collapsed buvExpand accordion-button-custom row mx-0 rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?= $match['idMatch'] ?>" aria-expanded="false" aria-controls="flush-collapse<?= $match['idMatch'] ?>">
+                                <div class="col">
+                                    <?php //${listeMatch[i].buvette.ouvert ? "Ouvert" : "Fermée"} ?>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                    <div class="col-sm-5">
+                                        <img src="../../${listeMatch[i].teamA.drapeau}" alt="drapeau ${listeMatch[i].teamA.pays}" class="buvettesImgDrapeau img-fluid">
+                                        <?= $match['participer'][0]['paysEquipe'] ?>
+                                    </div>
+                                    <div class="col-sm-2">
+                                    VS
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <img src="../../${listeMatch[i].teamB.drapeau}" alt="drapeau ${listeMatch[i].teamB.pays}" class="buvettesImgDrapeau img-fluid">
+                                        <?= $match['participer'][1]['paysEquipe'] ?>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col text-center">
+                                    <?= $match['dateMatch']?>
+                                </div>
+                                <div class="col">
+                                    <?php //${listeMatch[i].buvette.lieu} ?>
+                                </div>
+                            </button>
+                        </div>
+                        <div id="flush-collapse<?= $match['idMatch'] ?>" class="accordion-collapse collapse buvExpand" aria-labelledby="flush-heading<?= $match['idMatch'] ?>" data-bs-parent="#accordionFlushExample">
+                            <div class="row pt-5">
+                                <div class="col">
+                                <p><span>Nom :</span>  <?php //${listeMatch[i].buvette.nom} ?></p>
+                                </div>
+                                <div class="col">
+                                <p><span>Responsable :</span>  <?php //${listeMatch[i].buvette.resp} ?></p>
+                                </div>
+                                <div class="col">
+                                <p><span>Volontaires :</span>  <?php //${listeMatch[i].buvette.listVol.replaceAll(',', ', ')} ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            <?php endforeach; ?>
 
         </section>
         <!-- Aside annexe accueil   -->

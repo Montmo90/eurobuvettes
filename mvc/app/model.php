@@ -21,6 +21,12 @@ abstract class Model {
             echo "Autre erreur : " . $e->getMessage();
         }
     }
+
+    protected function Query($sql) {
+        $query = $this->connect->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
     
 }
 ?>
