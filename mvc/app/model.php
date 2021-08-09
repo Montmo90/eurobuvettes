@@ -22,10 +22,21 @@ abstract class Model {
         }
     }
 
-    protected function Query($sql) {
+    protected function FetchAll($sql, $values = null) {
         $query = $this->connect->prepare($sql);
-        $query->execute();
-        return $query->fetchAll();
+        $query->execute($values);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    protected function Fetch($sql, $values = null) {
+        $query = $this->connect->prepare($sql);
+        $query->execute($values);
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
+
+    protected function Execute($sql, $values = null) {
+        $query = $this->connect->prepare($sql);
+        return $query->execute($values);
     }
     
 }

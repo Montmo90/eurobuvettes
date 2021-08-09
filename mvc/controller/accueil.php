@@ -8,12 +8,10 @@ Groupe B :
 -->
 <?php
 class Accueil extends Controller {
+    
+    function start() {}
 
-    function begin(&$name) {
-        $name = self::class;
-    }
-
-    function start() {
+    function index() {
         $matchs = $this->model->getAllMatch();
 
         //var_dump($matchs[0]);

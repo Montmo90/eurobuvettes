@@ -1,11 +1,3 @@
-<!--
-15/07/2021
-Projet : Site EuroBuvette 2021
-Groupe B :
-            Fabian Metayer
-            Jeremy Chekroun
-            Morgan Tranquard
--->
 <?php
 //permet de mettre dans un tableau l'url en séparant avec le /
 $url =  explode('/', rtrim($_GET['url'], '/'));
@@ -26,24 +18,24 @@ if (file_exists('controller/' . $url[0]  . '.php')) {
     //Instantie un nouvel objet grace au constructeur de la classe de mon controleur
     $con = new $url[0];
 
-    //Je vais regarder si l'utilisateur à rentré une action
-    if(count($url) > 1) {
+    //regarde si il y a un action par defaut index
+    $action = isset($url[1]) ? $url[1] : "index";
+
         //Je vais tester si la method que je vais appeler via l'url existe
-        if(method_exists($con, $url[1])) {
+        if(method_exists($con, $action)) {
             //si il y a un paramétre
             if(array_key_exists(2,$url)) {
                 //Alors j'exécute la fonction avec argument
-                $con->{$url[1]}($url[2]);
+                $con->{$action}($url[2]);
             } else {
                 //Alors j'exécute la fonction sans argument
                 //les accolades servent à utiliser dynamiquement un nom de fonction ou de variable
-                $con->{$url[1]}();
+                $con->{$action}();
             }        
         //si non j'affiche un message d'erreur
         } else {
             echo '<h1>Pas de function <b>"' . $url[1] . '"</b> dans le controller <b>"'.$url[0].'"</b></h1>';
         }
-    }
 }
 else {
     require_once("view/404.php");

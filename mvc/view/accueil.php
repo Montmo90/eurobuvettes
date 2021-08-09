@@ -1,5 +1,5 @@
-<div class="mainAccueil container py-3">
-    <section class="accueil row" id="buvettes">
+<div class="container py-3">
+    <div class="row" id="buvettes">
         <section class="buvettesSlot col-lg-8">                
             <!--Emplacement des buvettes ajouté via JS-->
             <!--<pre>
@@ -65,5 +65,5 @@
             <p>29/12/2020 : 3 nouveaux volontaires, bienvenue à eux !</p>
             <p>18/12/2020 : Besoin de volontaires pour les matchs de janvier, soyez présents après les fêtes !</p>
         </aside>            
-    </section>
+    </div>
 </div>

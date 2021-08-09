@@ -2,24 +2,38 @@
 
 class Prive extends Controller {
 
-    function __construct() {
-        echo "Prive";
+    function start() {
+        session_start();       
     }
 
-    public function AddVolontaire() {
-        echo 'Ajout volontaire';
-        $this->model->addVolotaire();
-        require_once("view/prive.php");
-    }
+    function index() {
+        if(!isset($_SESSION['login'])) {
+            $this->render("prive_connexion");
+        } else {
+            $this->render("prive_formulaire");
+        }
+    } 
+    
+    function login() {
+        if(isset($_SESSION['login']))
+            $this->back();
 
-    public function DeleteVolontaire($id) {
+        $mdp = htmlentities($_POST['mdp']);
 
-    }
-
-    public function UpdateVolontaire($id, $nom, $age) {
-
+        if($mdp == "123") {
+            $_SESSION['login'] = true;
+            //connexion
+            $this->back();
+        } else {
+            //erreur
+            $this->render("prive_connexion", ["erreur" => true]);
+        }
     }
     
+    function logout() {
+        session_destroy();
+        $this->back();
+    }
 }
 
 ?>

@@ -1,12 +1,5 @@
 <?php
-class ModelPrive extends Model {
-    function addVolotaire() {
-        $sql = "INSERT INTO `volontaire`(`nomVolontaire`, `ageVolontaire`) VALUES (:nom,:age)";
+class M_Prive extends Model {
 
-        $prep = $pdo->connection()->prepare($sql);
-
-        $prep->execute(array(":nom" => $_POST["newVol"], ":age" => $_POST["ageVol"]));
-
-    }
 }
 ?>
