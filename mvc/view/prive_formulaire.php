@@ -12,11 +12,12 @@
         </nav>
 
         <div class="tab-content" id="nav-tabContent">
+            <!-- Volontaire -->
             <div class="tab-pane fade show active" id="nav-volontaire" role="tabpanel" aria-labelledby="nav-volontaire-tab">
                 <div class="row">
                     <div class="col-6">
                         <form class="row justify-content-center p-2" id="formAddVol" method="POST">
-                            <input name="idVolo" hidden>
+                            <input name="idVol" hidden>
                             <p>Ajouter un volontaire</p>
                             <div class="col-12 pb-3">
                                 <input type="text" class="form-control" name="nomVol" id="nomVolo" placeholder="Nom" required>
@@ -45,6 +46,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Buvette -->
             <div class="tab-pane fade" id="nav-buvette" role="tabpanel" aria-labelledby="nav-buvette-tab">
                 <form class="row justify-content-center p-2" name="formPriveBuv">
                     <div class="col-lg-6 ">
@@ -83,6 +85,7 @@
                     </div>
                 </form>
             </div>
+            <!-- Match -->
             <div class="tab-pane fade" id="nav-match" role="tabpanel" aria-labelledby="nav-match-tab">
                 <form class="row align-items-start justify-content-center p-2" name="formPriveBuv">
                     <div class="col-lg-6">

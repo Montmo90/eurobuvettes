@@ -7,10 +7,12 @@ $(function() {
 $("#formAddVol").submit(function (event) {
     event.preventDefault();
 
-    nom = $("#formAddVol").find('input[name="nomVol"]').val();
-    age = $("#formAddVol").find('input[name="ageVol"]').val();
-
+    let nom = $("#formAddVol").find('input[name="nomVol"]').val();
+    let age = $("#formAddVol").find('input[name="ageVol"]').val();
+    
     if(modifVol) {
+        let id = $("#formAddVol").find('input[name="idVol"]').val();
+        console.log(id);
         updateVol(id, nom, age);
     } else {
         addVol(nom, age);
@@ -18,6 +20,7 @@ $("#formAddVol").submit(function (event) {
 
 });
 
+//Create
 function addVol (nom, age) {
     $.post("api/addVol", {nom,age})
     .done(function(data) {
@@ -27,13 +30,13 @@ function addVol (nom, age) {
             toast("danger", "Erreur !", `Une erreur est survenue.`);
         }
 
-    
         $("#formAddVol")[0].reset();
     
         listVolontaires();
     });
 }
 
+//Update
 function updateVol (id, nom, age) {
     $.post("api/updateVol", {id,nom,age})
     .done(function(data) {
@@ -52,11 +55,25 @@ function updateVol (id, nom, age) {
     });
 }
 
+$("#modifVol").click(function() {
+    let id = $("#volList").val();
+    let nom = $("#volList option[value="+id+"]").attr("nom");
+    let age = $("#volList option[value="+id+"]").attr("age");
+
+    $("#formAddVol").find('input[name="idVol"]').val(id);
+    $("#formAddVol").find('input[name="nomVol"]').val(nom);
+    $("#formAddVol").find('input[name="ageVol"]').val(age);
+
+    $("#btnAddVol").val('Modifier');
+    modifVol = true;
+});
+
+//Delete
 $("#formPriveVol").submit(function (event) {
     event.preventDefault();
 
-    id = $("#volList").val();
-    nom = $("#volList option[value="+id+"]").attr("nom");
+    let id = $("#volList").val();
+    let nom = $("#volList option[value="+id+"]").attr("nom");
 
     $.post("api/deleteVol", {id})
     .done(function(data) {
@@ -70,19 +87,7 @@ $("#formPriveVol").submit(function (event) {
     });    
 });
 
-$("#modifVol").click(function() {
-    id = $("#volList").val();
-    nom = $("#volList option[value="+id+"]").attr("nom");
-    age = $("#volList option[value="+id+"]").attr("age");
-
-    $("#formAddVol").find('input[name="idVol"]').val(id);
-    $("#formAddVol").find('input[name="nomVol"]').val(nom);
-    $("#formAddVol").find('input[name="ageVol"]').val(age);
-
-    $("#btnAddVol").val('Modifier');
-    modifVol = true;
-});
-
+//Read
 function listVolontaires() {
     $("#volList").children().remove();
 
@@ -110,7 +115,7 @@ function toast(type, title, content) {
 
     $("#mainToast").append(t);
 
-    var toast = new bootstrap.Toast($(`#toast${countToast}`));
+    let toast = new bootstrap.Toast($(`#toast${countToast}`));
     toast.show();
 
     countToast++;

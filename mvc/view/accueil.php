@@ -1,10 +1,6 @@
 <div class="container py-3">
     <div class="row" id="buvettes">
         <section class="buvettesSlot col-lg-8">                
-            <!--Emplacement des buvettes ajouté via JS-->
-            <!--<pre>
-            <?php print_r($matchs); ?>
-            </pre>-->
             <?php foreach($matchs as $match): ?>
                 <div class="accordion accordion-flush panel mx-0 mb-4" id="accordionFlushExample">
                     <div class="accordion-item accordion-item-custom">
@@ -52,7 +48,6 @@
                     </div>
                     </div>
             <?php endforeach; ?>
-
         </section>
         <!-- Aside annexe accueil   -->
         <aside class="annexeAccueil col-lg-4 rounded-1 py-3">

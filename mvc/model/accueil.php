@@ -12,12 +12,12 @@ class M_Accueil extends Model {
     }
 
     public function getBuvette($idMatch) {
-        $sql = "SELECT * FROM est_ouverte INNER JOIN buvette ON est_ouverte.idBuvette = buvette.idBuvette INNER JOIN volontaire ON buvette.idVolontaire = volontaire.idVolontaire WHERE idMatch = " . $idMatch;
+        $sql = "SELECT * FROM est_ouverte INNER JOIN buvette ON est_ouverte.idBuvette = buvette.idBuvette WHERE idMatch = " . $idMatch;
         return $this->FetchAll($sql);
     }
 
     public function getPresent($idBuvette) {
-        $sql = "SELECT * FROM est_present INNER JOIN volontaire ON est_present.idVolontaire = volontaire.idVolontaire WHERE idMatch = " . $idBuvette;
+        $sql = "SELECT * FROM est_present INNER JOIN volontaire ON est_present.idVolontaire = volontaire.idVolontaire WHERE idBuvette = " . $idBuvette;
         return $this->FetchAll($sql);
     }
 }

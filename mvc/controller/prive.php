@@ -3,7 +3,7 @@
 class Prive extends Controller {
 
     function start() {
-        session_start();       
+        session_start();
     }
 
     function index() {
