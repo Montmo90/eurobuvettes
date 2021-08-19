@@ -1,5 +1,4 @@
 <?php
-
 class Prive extends Controller {
 
     function start() {

@@ -1,4 +1,4 @@
-<div class="container py-3">
+<div class="container">
     <section class="row panel text-center py-3">
         <?php if(isset($erreur)) : ?>
             <div class="alert alert-danger" role="alert">

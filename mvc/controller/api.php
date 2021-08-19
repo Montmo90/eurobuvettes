@@ -1,5 +1,4 @@
 <?php
-
 class Api extends Controller {
 
     function start() {

@@ -1,4 +1,4 @@
-<div class="container py-3">
+<div class="container">
     <section class="row panel py-3">
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">

@@ -50,7 +50,7 @@
                     echo '<li class="nav-item"><a class ="nav-link mx-3" href="'.$this->url.'statistiques">Statistiques</a></li>';
                 
 
-                if(get_class($this) == "Recherchemembres")
+                if(get_class($this) == "Membres")
                     echo '<li class="nav-item"><a class ="nav-link mx-3 active" href="'.$this->url.'membres">Membres</a></li>';
                 else
                     echo '<li class="nav-item"><a class ="nav-link mx-3" href="'.$this->url.'membres">Membres</a></li>';
@@ -71,7 +71,7 @@
     </div>
 </div>
 
-<main class="main h-100">
+<main class="main h-100 py-4">
 
     <?= $content ?>
 
