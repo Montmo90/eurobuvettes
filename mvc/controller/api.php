@@ -12,6 +12,7 @@ class Api extends Controller {
         //redirection
     }
 
+    #region Volontaire
     //Create
     function addVol (){
         $nom = htmlentities($_POST['nom']);
@@ -45,13 +46,55 @@ class Api extends Controller {
     //Delete
     function deleteVol () {
         $id = htmlentities($_POST['id']);
+        $reponse = $this->model->deleteVolontaire($id);
+        echo $reponse;
+    }
+    #endregion
 
-        if($this->model->deleteVolontaire($id)) {
+    #region Buvettes
+    //Create
+    function addBuvette (){
+        $buvette = htmlentities($_POST['buvette']);
+        $emplacement = htmlentities($_POST['emplacement']);
+        $idResp = htmlentities($_POST['idResp']);
+
+        if($this->model->addBuvette($buvette, $emplacement, $idResp)) {
             echo 'true';
             die;
         }
         echo 'false';
     }
+    
+    //Read
+    function getAllBuvettes() {
+        echo json_encode($this->model->getAllBuvettes());
+    }
+    
+    //Update
+    function updateBuvette() {
+        $id = htmlentities($_POST['id']);
+        $buvette = htmlentities($_POST['buvette']);
+        $emplacement = htmlentities($_POST['emplacement']);
+        $idResp = htmlentities($_POST['idResp']);
+        
+        if($this->model->updateBuvette($id, $buvette, $emplacement, $idResp)) {
+            echo 'true';
+            die;
+        }
+        echo 'false';
+    }
+
+    //Delete
+    function deleteBuvette () {
+        $id = htmlentities($_POST['id']);
+
+        if($this->model->deleteBuvette($id)) {
+            echo 'true';
+            die;
+        }
+        echo 'false';
+    }
+    #endregion
 }
 
 ?>
