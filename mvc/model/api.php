@@ -41,6 +41,8 @@ class M_Api extends Model {
     }
     #endregion
 
+
+
     #region Buvettes
     //Create
     function addBuvette($buvette, $emplacement, $idResp) {
@@ -75,5 +77,86 @@ class M_Api extends Model {
         return false;
     }
     #endregion
+
+
+
+    #region Equipe    
+    //Create
+    function addEquipe($pays, $drapeau) {
+        $sql = "INSERT INTO equipe(paysEquipe, drapeauEquipe) VALUES (:pays,:drapeau)";
+        if($this->Execute($sql, array(":pays" => $pays, ":drapeau" => $drapeau))) {
+            return true;
+        }
+        return false;
+    }
+    
+    //Read
+    function getAllEquipe() {
+        $sql = "SELECT idEquipe as id, paysEquipe as pays, drapeauEquipe as drapeau FROM equipe";
+        return $this->FetchAll($sql);
+    }
+
+    //Update
+    function updateEquipe($id, $pays, $drapeau) {
+        $sql = "UPDATE equipe SET paysEquipe=:pays, drapeauEquipe=:drapeau WHERE idEquipe = :id";
+        if($this->Execute($sql, array(":id" => $id, ":pays" => $pays, ":drapeau" => $drapeau))) {
+            return true;
+        }
+        return false;
+    }
+    
+    //Delete
+    function deleteEquipe($id) {
+        //test avant si l'equipe est participe à un match
+        $sqlPar = "SELECT * FROM matchs WHERE idEqu1 = :id OR idEqu2 = :id";
+        if (count($this->FetchAll($sqlPar, array(":id" => $id))) == 0) {
+            $sql = "DELETE FROM equipe WHERE idEquipe = :id";
+            if($this->Execute($sql, array(":id" => $id))) {
+                return "true";
+            }
+            return "false";
+        }
+        return "vol";
+    }    
+    #endregion
+    
+
+
+    #region Matchs
+    //Create
+    function addMatch($date, $emplacement, $equ1, $scoreEqu1, $equ2, $scoreEqu2) {
+        $sql = "INSERT INTO matchs(dateMatch, emplacement, idEqu1, scoreEqu1, idEqu2, scoreEqu2) VALUES (:date,:emplacement,:equ1,:scoreEqu1,:equ2,:scoreEqu2)";
+        if($this->Execute($sql, array(":date" => $date, ":emplacement" => $emplacement, ":equ1" => $equ1, ":scoreEqu1" => $scoreEqu1, ":equ2" => $equ2, ":scoreEqu2" => $scoreEqu2))) {
+            return true;
+        }
+        return false;
+    }
+    
+    //Read
+    function getAllMatchs() {
+        $sql = "SELECT idMatch as id, dateMatch as date, emplacement, idEqu1 as equ1, scoreEqu1, idEqu2 as equ2, scoreEqu2, equ1.paysEquipe as pays1, equ1.drapeauEquipe as drap1, equ2.paysEquipe as pays2, equ2.drapeauEquipe as drap2 FROM matchs INNER JOIN equipe as equ1 ON matchs.idEqu1 = equ1.idEquipe INNER JOIN equipe as equ2 ON matchs.idEqu2 = equ2.idEquipe";
+        return $this->FetchAll($sql);
+    }
+
+    //Update
+    function updateMatch($id, $date, $emplacement, $equ1, $scoreEqu1, $equ2, $scoreEqu2) {
+        $sql = "UPDATE matchs SET dateMatch=:date, emplacement=:emplacement, idEqu1=:equ1, scoreEqu1=:scoreEqu1, idEqu2=:equ2, scoreEqu2=:scoreEqu2 WHERE idMatch = :id";
+        if($this->Execute($sql, array(":id" => $id, ":date" => $date, ":emplacement" => $emplacement, ":equ1" => $equ1, ":scoreEqu1" => $scoreEqu1, ":equ2" => $equ2, ":scoreEqu2" => $scoreEqu2))) {
+            return true;
+        }
+        return false;
+    }
+    
+    //Delete
+    function deleteMatch($id) {
+        $sql = "DELETE FROM matchs WHERE idMatch = :id";
+        if($this->Execute($sql, array(":id" => $id))) {
+            return true;
+        }
+        return false;
+    }
+    #endregion
+
+
 }
 ?>
