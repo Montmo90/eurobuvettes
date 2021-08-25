@@ -1,4 +1,8 @@
 //Toast
+$(function() {
+    $("body").append(`<div class="position-fixed bottom-0 end-0 p-3 toast-container" style="z-index: 11" id="mainToast"></div>`);
+});
+
 let countToast = 0;
 function toast(type, title, content) {
     let t = `  

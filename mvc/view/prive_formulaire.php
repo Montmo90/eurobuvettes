@@ -163,7 +163,7 @@
                                         </select>
                                     </div>
                                     <div class="col-6">
-                                        <input type="number" class="form-control" id="scoreEqu1" placeholder="Score" value="0">
+                                        <input type="number" class="form-control" id="scoreEqu1" placeholder="Score">
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                         </select>
                                     </div>
                                     <div class="col-6">
-                                        <input type="number" class="form-control" id="scoreEqu2" placeholder="Score" value="0">
+                                        <input type="number" class="form-control" id="scoreEqu2" placeholder="Score">
                                     </div>
                                 </div>
                             </div>
@@ -205,62 +205,19 @@
     </section>
 </div>
 
-<!-- TOAST -->
-<div class="position-fixed bottom-0 end-0 p-3 toast-container" style="z-index: 11" id="mainToast">
-</div>
-
-<!-- MOPDAL DELETE VOLONTAIRE-->
-<div class="modal fade" id="modalDeleteVol" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteVolLabel" aria-hidden="true">
+<!-- MOPDAL DELETE -->
+<div class="modal fade" id="modalDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteVolLabel">Suppression</h5>
+                <h5 class="modal-title" id="deleteLabel">Suppression</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Souhaitez vous supprimer le volontaire <strong><span id="modalNomVol"></span></strong>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-custom" id="deleteVol">Valider</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MOPDAL DELETE BUVETTE-->
-<div class="modal fade" id="modalDeleteBuv" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteBuvLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteBuvLabel">Suppression</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Souhaitez vous supprimer la buvette <strong><span id="modalNomBuv"></span></strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-custom" id="deleteBuv">Valider</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- MOPDAL DELETE EQUIPE-->
-<div class="modal fade" id="modalDeleteEqu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteEquLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteEquLabel">Suppression</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Souhaitez vous supprimer l'équipe <strong><span id="modalNomEqu"></span></strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-custom" id="deleteEqu">Valider</button>
+                <button type="button" class="btn btn-custom" id="deleteConfirm">Valider</button>
             </div>
         </div>
     </div>
@@ -280,31 +237,10 @@
     </div>
 </div>
 
-<!-- MOPDAL DELETE MATCH-->
-<div class="modal fade" id="modalDeleteMat" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteMatLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteMatLabel">Suppression</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Souhaitez vous supprimer le match du <strong><span id="modalNomMat"></span></strong>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-custom" id="deleteMat">Valider</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-
-
-<div class="" id="drap"></div>
-
+<script src="<?= $this->url ?>public/src/get.js"></script>
 <script src="<?= $this->url ?>public/src/prive/volontaires.js"></script>
 <script src="<?= $this->url ?>public/src/prive/buvettes.js"></script>
 <script src="<?= $this->url ?>public/src/prive/equipes.js"></script>
 <script src="<?= $this->url ?>public/src/prive/matchs.js"></script>
-<script src="<?= $this->url ?>public/src/prive/toast.js"></script>
+<script src="<?= $this->url ?>public/src/toast.js"></script>

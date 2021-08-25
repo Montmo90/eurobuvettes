@@ -94,7 +94,7 @@ $("#btnAddEqu").click(function () {
 
 //Create
 function addEqu(pays, drapeau) {
-    $.post("api/addEqu", { pays, drapeau })
+    $.post("prive/addEqu", { pays, drapeau })
         .done(function (data) {
             if (data == 'true') {
                 toast("success", "Félicitation !", `L'équipe <strong>${pays}</strong> a bien été ajoutée.`);
@@ -112,7 +112,7 @@ function addEqu(pays, drapeau) {
 
 //Update
 function updateEqu(id, pays, drapeau) {
-    $.post("api/updateEqu", { id, pays, drapeau })
+    $.post("prive/updateEqu", { id, pays, drapeau })
         .done(function (data) {
             if (data == 'true') {
                 toast("warning", "Félicitation !", `L'équipe <strong>${pays}</strong> a bien été modifiée.`);
@@ -163,25 +163,29 @@ $("#effacerEqu").click(function () {
     if ($("#equList").val() == "")
         return;
 
-    var myModal = new bootstrap.Modal(document.getElementById('modalDeleteEqu'));
+    let myModal = new bootstrap.Modal(document.getElementById('modalDelete'));
     myModal.show();
 
     let id = $("#equList").val();
     let pays = $("#equList option[value=" + id + "]").attr("pays");
 
-    $("#modalNomEqu").html(pays);
-})
+    $("#modalDelete .modal-body").html(`Souhaitez-vous supprimer l'équipe ${pays} ?`);
+
+    $("#deleteConfirm").off("click");
+    $("#deleteConfirm").on("click", deleteEqu);
+});
+
 
 //Confirme Delete
-$("#deleteEqu").click(function () {
-    var myModalEl = document.getElementById('modalDeleteEqu');
-    var modal = bootstrap.Modal.getInstance(myModalEl);
+function deleteEqu() {
+    let myModalEl = document.getElementById('modalDelete');
+    let modal = bootstrap.Modal.getInstance(myModalEl);
     modal.hide();
 
     let id = $("#equList").val();
     let pays = $("#equList option[value=" + id + "]").attr("pays");
 
-    $.post("api/deleteEqu", { id })
+    $.post("prive/deleteEqu", { id })
         .done(function (data) {
 
             console.log(data);
@@ -200,19 +204,6 @@ $("#deleteEqu").click(function () {
                 toast("danger", "Erreur !", `Vous ne pouvez pas supprimer l'équipe <strong>${pays}</strong> car elle participe à un matchs.`);
             }
         });
-});
-
-//Read
-function listEquipes(id) {
-    $(id).children().remove();
-
-    $.get("api/getAllEqu", function (data) {
-        let append = `<option value="">Liste des équipes</option>`;
-        for (const value of data) {
-            append += `<option value="${value["id"]}" pays="${value["pays"]}" drapeau="${value["drapeau"]}">ID ${value["id"]} : ${value["pays"]}</option>`;
-        }
-        $(id).append(append);
-    }, 'json');
 }
 
 //Reset
@@ -240,7 +231,7 @@ function resetEquipe() {
 //Drapeau
 function listDrapeau() {
     let append = "";
-    $.get("api/listDrapeau", function (data) {
+    $.get("prive/listDrapeau", function (data) {
         for (const value of data) {
             append += `<div onclick="choixDrapeau('${value}')"><img src="public/img/flags/${value}" alt="${value}" class="py-1 px-1"><p>${value}</p></div>`;
         }

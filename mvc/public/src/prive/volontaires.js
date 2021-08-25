@@ -82,7 +82,7 @@ $("#btnAddVol").click(function () {
 
 //Create
 function addVol(nom, age) {
-    $.post("api/addVol", { nom, age })
+    $.post("prive/addVol", { nom, age })
         .done(function (data) {
             if (data == 'true') {
                 toast("success", "Félicitation !", `Le volontaire <strong>${nom}</strong> a bien été ajouté.`);
@@ -99,7 +99,7 @@ function addVol(nom, age) {
 
 //Update
 function updateVol(id, nom, age) {
-    $.post("api/updateVol", { id, nom, age })
+    $.post("prive/updateVol", { id, nom, age })
         .done(function (data) {
             if (data == 'true') {
                 toast("warning", "Félicitation !", `Le volontaire <strong>${nom}</strong> a bien été modifié.`);
@@ -148,25 +148,28 @@ $("#effacerVol").click(function () {
     if ($("#volList").val() == "")
         return;
 
-    var myModal = new bootstrap.Modal(document.getElementById('modalDeleteVol'));
+    let myModal = new bootstrap.Modal(document.getElementById('modalDelete'));
     myModal.show();
 
     let id = $("#volList").val();
     let nom = $("#volList option[value=" + id + "]").attr("nom");
 
-    $("#modalNomVol").html(nom);
+    $("#modalDelete .modal-body").html(`Souhaitez-vous supprimer le volontaire ${nom} ?`);
+
+    $("#deleteConfirm").off("click");
+    $("#deleteConfirm").on("click", deleteVol);
 })
 
 //Confirme Delete
-$("#deleteVol").click(function () {
-    var myModalEl = document.getElementById('modalDeleteVol');
-    var modal = bootstrap.Modal.getInstance(myModalEl);
+function deleteVol() {
+    let myModalEl = document.getElementById('modalDelete');
+    let modal = bootstrap.Modal.getInstance(myModalEl);
     modal.hide();
 
     let id = $("#volList").val();
     let nom = $("#volList option[value=" + id + "]").attr("nom");
 
-    $.post("api/deleteVol", { id })
+    $.post("prive/deleteVol", { id })
         .done(function (data) {
             if (data == 'true') {
                 toast("success", "Félicitation !", `Le volontaire <strong>${nom}</strong> a bien été supprimé.`);
@@ -179,19 +182,6 @@ $("#deleteVol").click(function () {
                 toast("danger", "Erreur !", `Vous ne pouvez pas supprimer le volontaire <strong>${nom}</strong> car il est responsable d'au moins une buvette.`);
             }
         });
-});
-
-//Read
-function listVolontaires(id) {
-    $(id).children().remove();
-
-    $.get("api/getAllVol", function (data) {
-        let append = `<option value="">Liste des volontaires</option>`;
-        for (const value of data) {
-            append += `<option value="${value["id"]}" nom="${value["nom"]}" age="${value["age"]}">ID ${value["id"]} : ${value["nom"]} - ${value["age"]} ans</option>`;
-        }
-        $(id).append(append);
-    }, 'json');
 }
 
 //Reset

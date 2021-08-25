@@ -157,7 +157,7 @@ $("#btnAddMat").click(function () {
 
 //Create
 function addMat(date, emplacement, equ1, scoreEqu1, equ2, scoreEqu2) {
-    $.post("api/addMat", { date, emplacement, equ1, scoreEqu1, equ2, scoreEqu2 })
+    $.post("prive/addMat", { date, emplacement, equ1, scoreEqu1, equ2, scoreEqu2 })
         .done(function (data) {
             if (data == 'true') {
                 toast("success", "Félicitation !", `Le match du <strong>${date}</strong> a bien été ajouté.`);
@@ -173,7 +173,7 @@ function addMat(date, emplacement, equ1, scoreEqu1, equ2, scoreEqu2) {
 
 //Update
 function updateMat(id, date, emplacement, equ1, scoreEqu1, equ2, scoreEqu2) {
-    $.post("api/updateMat", { id, date, emplacement, equ1, scoreEqu1, equ2, scoreEqu2 })
+    $.post("prive/updateMat", { id, date, emplacement, equ1, scoreEqu1, equ2, scoreEqu2 })
         .done(function (data) {
             if (data == 'true') {
                 toast("warning", "Félicitation !", `Le match du <strong>${date}</strong> a bien été modifié.`);
@@ -236,25 +236,30 @@ $("#effacerMat").click(function () {
     if ($("#matList").val() == "")
         return;
 
-    var myModal = new bootstrap.Modal(document.getElementById('modalDeleteMat'));
+    let myModal = new bootstrap.Modal(document.getElementById('modalDelete'));
     myModal.show();
 
     let id = $("#matList").val();
     let date = $("#matList option[value=" + id + "]").attr("date");
+    let pays1 = $("#matList option[value=" + id + "]").attr("pays1");
+    let pays2 = $("#matList option[value=" + id + "]").attr("pays2");
 
-    $("#modalNomMat").html(date);
-})
+    $("#modalDelete .modal-body").html(`Souhaitez-vous supprimer le match ${pays1} vs ${pays2} du ${date} ?`);
+
+    $("#deleteConfirm").off("click");
+    $("#deleteConfirm").on("click", deleteMat);
+});
 
 //Confirme Delete
-$("#deleteMat").click(function () {
-    var myModalEl = document.getElementById('modalDeleteMat');
-    var modal = bootstrap.Modal.getInstance(myModalEl);
+function deleteMat() {
+    let myModalEl = document.getElementById('modalDelete');
+    let modal = bootstrap.Modal.getInstance(myModalEl);
     modal.hide();
 
     let id = $("#matList").val();
     let date = $("#matList option[value=" + id + "]").attr("date");
 
-    $.post("api/deleteMat", { id })
+    $.post("prive/deleteMat", { id })
         .done(function (data) {
             if (data == 'true') {
                 toast("success", "Félicitation !", `Le match du <strong>${date}</strong> a bien été supprimé.`);
@@ -264,19 +269,6 @@ $("#deleteMat").click(function () {
                 toast("danger", "Erreur !", `Une erreur est survenue.`);
             }
         });
-});
-
-//Read
-function listMatchs(id) {
-    $(id).children().remove();
-
-    $.get("api/getAllMat", function (data) {
-        let append = `<option value="">Liste des matchs</option>`;
-        for (const value of data) {
-            append += `<option value="${value["id"]}" date="${value["date"]}" emplacement="${value["emplacement"]}" equ1="${value["equ1"]}" scoreEqu1="${value["scoreEqu1"]}" equ2="${value["equ2"]}" scoreEqu2="${value["scoreEqu2"]}">ID ${value["id"]} : Le ${value["date"]} à ${value["emplacement"]} - ${value["pays1"]} vs ${value["pays2"]}</option>`;
-        }
-        $(id).append(append);
-    }, 'json');
 }
 
 //Reset
