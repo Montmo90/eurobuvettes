@@ -13,7 +13,7 @@ class M_Affectations extends Model {
 
     //Read
     function getAllAssigner() {
-        $sql = "SELECT id, assigner.idBuvette, assigner.idMatch, nomBuvette, emplacementB, dateMatch, emplacement, idEqu1, equ1.paysEquipe as pays1, idEqu2, equ2.paysEquipe as pays2 FROM assigner INNER JOIN buvette ON assigner.idBuvette = buvette.idBuvette INNER JOIN matchs ON assigner.idMatch = matchs.idMatch INNER JOIN equipe as equ1 ON matchs.idEqu1 = equ1.idEquipe INNER JOIN equipe as equ2 ON matchs.idEqu2 = equ2.idEquipe";
+        $sql = "SELECT id, assigner.idBuvette, assigner.idMatch, nomBuvette, emplacementB, dateMatch, emplacement, idEqu1, equ1.paysEquipe as pays1, idEqu2, equ2.paysEquipe as pays2 FROM assigner INNER JOIN buvette ON assigner.idBuvette = buvette.idBuvette INNER JOIN matchs ON assigner.idMatch = matchs.idMatch INNER JOIN equipe as equ1 ON matchs.idEqu1 = equ1.idEquipe INNER JOIN equipe as equ2 ON matchs.idEqu2 = equ2.idEquipe WHERE assigner.suppr = 0";
         return $this->FetchAll($sql);
     }
 
@@ -28,7 +28,7 @@ class M_Affectations extends Model {
     
     //Delete
     function deleteAssigner($id) {
-        $sql = "DELETE FROM assigner WHERE id = :id";
+        $sql = "UPDATE assigner SET suppr=1 WHERE id = :id";
         if($this->Execute($sql, array(":id" => $id))) {
             return "true";
         }

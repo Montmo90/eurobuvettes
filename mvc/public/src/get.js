@@ -1,42 +1,37 @@
-function listVolontaires(id) {
-    $(id).children().remove();
-
+function listVolontaires(id) {    
     $.get("prive/getAllVol", function (data) {
         let append = `<option value="">Liste des volontaires</option>`;
         for (const value of data) {
             append += `<option value="${value["id"]}" nom="${value["nom"]}" age="${value["age"]}">ID ${value["id"]} : ${value["nom"]} - ${value["age"]} ans</option>`;
         }
+        $(id).children().remove();
         $(id).append(append);
     }, 'json');
 }
 
-function listBuvettes(id) {
-    $(id).children().remove();
-
+function listBuvettes(id) {    
     $.get("prive/getAllBuv", function (data) {
         let append = `<option value="">Liste des buvettes</option>`;
         for (const value of data) {
             append += `<option value="${value["id"]}" nomBuvette="${value["nomBuvette"]}" emplacement="${value["emplacement"]}" idVol="${value["idVol"]}">ID ${value["id"]} : ${value["nomBuvette"]} à ${value["emplacement"]} - Resp : ID ${value["idVol"]} : ${value["nom"]} - ${value["age"]} ans</option>`;
         }
+        $(id).children().remove();
         $(id).append(append);
     }, 'json');
 }
 
-function listEquipes(id) {
-    $(id).children().remove();
-    
+function listEquipes(id) {    
     $.get("prive/getAllEqu", function (data) {
         let append = `<option value="">Liste des équipes</option>`;
         for (const value of data) {
             append += `<option value="${value["id"]}" pays="${value["pays"]}" drapeau="${value["drapeau"]}">ID ${value["id"]} : ${value["pays"]}</option>`;
         }
+        $(id).children().remove();
         $(id).append(append);
     }, 'json');
 }
 
-function listMatchs(id) {
-    $(id).children().remove();
-
+function listMatchs(id) {    
     $.get("prive/getAllMat", function (data) {
         let append = `<option value="">Liste des matchs</option>`;
         for (const value of data) {
@@ -44,13 +39,12 @@ function listMatchs(id) {
             ID ${value["id"]} : Le ${value["date"]} à ${value["emplacement"]} - ${value["pays1"]} vs ${value["pays2"]}
             </option>`;
         }
+        $(id).children().remove();
         $(id).append(append);
     }, 'json');
 }
 
-function listAssigner(id) {
-    $(id).children().remove();
-
+function listAssigner(id) {    
     $.get("affectations/getAllAss", function (data) {
         let append = `<option value="">Liste des affectations d'une buvette à un match</option>`;
         for (const value of data) {
@@ -58,6 +52,7 @@ function listAssigner(id) {
             ID ${value["id"]} : La buvette ${value["nomBuvette"]} à ${value["emplacementB"]} est affectée au match ${value["pays1"]} vs ${value["pays2"]} le ${value["dateMatch"]} à ${value["emplacement"]}
             </option>`;
         }
+        $(id).children().remove();
         $(id).append(append);
     }, 'json');
 }

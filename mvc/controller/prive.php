@@ -46,7 +46,7 @@ class Prive extends Controller {
         $this->estLoguer();
         
         $nom = htmlentities($_POST['nom']);
-        $age = htmlentities($_POST['age']);
+        $age = intval(htmlentities($_POST['age']));
 
         if($this->model->addVolontaire($nom, $age)) {
             echo 'true';
@@ -73,12 +73,6 @@ class Prive extends Controller {
             die;
         }
         echo 'false';
-
-        if($id)
-            echo "test";
-        else
-            echo 'test';
-        echo "test";
     }
 
     //Delete
@@ -243,11 +237,7 @@ class Prive extends Controller {
         
         $id = htmlentities($_POST['id']);
 
-        if($this->model->deleteMatch($id)) {
-            echo 'true';
-            die;
-        }
-        echo 'false';
+        echo $this->model->deleteMatch($id);
     }
     #endregion
 

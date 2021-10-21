@@ -54,64 +54,99 @@
         </div>
         <!-- Affecter un volontaire -->
         <div class="tab-pane fade" id="affecterVolontaire" role="tabpanel" aria-labelledby="affecterVolontaire-tab">
-            <form id="choixVol" class="formAffect container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-md">
-                        <span>Match :</span>
-                        <select id="match_list" class="form-select" onchange="changeListBuvettes('buvette_list', this)">
-                            <option selected>
-                                <!--        Insertion liste matchs          -->
-                            </option>
-                        </select>
-                    </div>
-                    <div class="col-md">
-                        <span>Buvette :</span>
-                        <select id="buvette_list" class="form-select">
-                            <!--        Insertion liste buvettes        -->
-                        </select>
-                    </div>
-                    <div class="col-md">
-                        <span>Volontaire :</span>
-                        <input type="text" list="volontaire_list" name="volontaire" class="form-control">
-                        <datalist id="volontaire_list">
-                            <!--        Insertion listes volontaires        -->
-                        </datalist>
-                    </div>
-                    <div class="col-md">
-                        <label class="form-check-label" for="responsable">Responsable :</label>
-                        <input type="checkbox" class="from-check-input" id="responsable">
-                    </div>
-                    <div class="col-12 col-xl pt-3 pt-xl-0">
-
-                        <button type="submit" class="btn btn-custom">Envoyer</button>
-                        <button type="reset" onclick="clearAffect('buvette_list')" class="btn btn-custom">Reinitialiser</button>
+            <div class="row">
+                <div class="col-6">
+                    <div class="row justify-content-center p-2">
+                        <input id="idAff" hidden>
+                        <p>Affecter un volontaire à une buvette</p>
+                        <div class="col-12 pb-3">
+                            <select id="matListAff" class="form-select" aria-describedby="invalidMatListAff">
+                                <!-- option -->
+                            </select>
+                            <div id="invalidMatListAff" class="invalid-feedback">
+                                Merci de choisir un match.
+                            </div>
+                        </div>
+                        <div class="col-12 pb-3">
+                            <select id="buvListAff" class="form-select" aria-describedby="invalidBuvListAff">
+                                <!-- option -->
+                            </select>
+                            <div id="invalidBuvListAff" class="invalid-feedback">
+                                Merci de choisir une buvette.
+                            </div>
+                        </div>
+                        <div class="col-12 pb-3">
+                            <select id="volListAff" class="form-select" aria-describedby="invalidVolListAff">
+                                <!-- option -->
+                            </select>
+                            <div id="invalidVolListAff" class="invalid-feedback">
+                                Merci de choisir un volontaire.
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex  align-items-end">
+                            <input class="btn btn-custom" type="button" id="btnAddAff" value="Ajouter" disabled>
+                            <input class="btn btn-danger ms-auto" type="button" id="btnCancelAff" value="Annuler" hidden>
+                        </div>
                     </div>
                 </div>
-            </form>
+                <div class="col-6">
+                    <div class="row justify-content-center p-2 h-100">
+                        <div class="col-12">
+                            <p>Liste des affectations d'un volontaire à une buvette</p>
+                            <select id="affList" class="form-select">
+                                <!-- option -->
+                            </select>
+                        </div>
+                        <div class="col-12 d-flex align-items-end">
+                            <input class="btn btn-custom" type="button" id="effacerAff" value="Effacer" disabled>
+                            <input class="btn btn-warning ms-auto" type="button" id="modifAff" value="Modifier" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Statut d'une buvette -->
         <div class="tab-pane fade" id="statutBuvette" role="tabpanel" aria-labelledby="statutBuvette-tab">
-            <form id="choixBuv" class="formAffect row d-flex align-items-center">
-
-                <div class="col-md">
-                    <span>Match :</span>
-                    <select id="match_list2" onchange="changeListBuvettes('buvette_list2',this)" class="form-select">
-                        <option selected></option>
-                    </select>
+            <div class="row">
+                <div class="col-6">
+                    <div class="row justify-content-center p-2">
+                        <input id="idSta" hidden>
+                        <p>Statut d'une buvette</p>
+                        <div class="col-12 pb-3">
+                            <select id="buvListSta" class="form-select" aria-describedby="invalidBuvListSta">
+                                <!-- option -->
+                            </select>
+                            <div id="invalidBuvListSta" class="invalid-feedback">
+                                Merci de choisir une buvette.
+                            </div>
+                        </div>
+                        <div class="col-12 pb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="staBuv" disabled>
+                                <label class="form-check-label" for="staBuv">Ouvrir</label>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex  align-items-end">
+                            <input class="btn btn-custom" type="button" id="btnAddSta" value="Ajouter" disabled>
+                            <input class="btn btn-danger ms-auto" type="button" id="btnCancelSta" value="Annuler" hidden>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <span>Buvette :</span>
-                    <select id="buvette_list2" onchange="selectBuvettes()" class="form-select">
-                    </select>
+                <div class="col-6">
+                    <div class="row justify-content-center p-2 h-100">
+                        <div class="col-12">
+                            <p>Liste des buvettes ouvertes</p>
+                            <select id="staList" class="form-select">
+                                <!-- option -->
+                            </select>
+                        </div>
+                        <div class="col-12 d-flex align-items-end">
+                            <input class="btn btn-custom" type="button" id="effacerSta" value="Effacer" disabled>
+                            <input class="btn btn-warning ms-auto" type="button" id="modifSta" value="Modifier" disabled>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <span id="statut">Statut : </span>
-                </div>
-                <div class="col-md pt-3 pt-lg-0">
-                    <button type="button" class="btn btn-custom" onclick="confirmation(true)" id="btnOuvrirBuvette" disabled>Ouvrir</button>
-                    <button type="button" class="btn btn-custom" onclick="confirmation(false)" id="btnFermerBuvette" disabled>Fermer</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
@@ -136,4 +171,6 @@
 
 <script src="<?= $this->url ?>public/src/get.js"></script>
 <script src="<?= $this->url ?>public/src/affectations/assigner.js"></script>
+<script src="<?= $this->url ?>public/src/affectations/affecter.js"></script>
+<script src="<?= $this->url ?>public/src/affectations/statuer.js"></script>
 <script src="<?= $this->url ?>public/src/toast.js"></script>

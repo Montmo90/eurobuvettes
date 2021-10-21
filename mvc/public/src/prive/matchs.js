@@ -265,8 +265,10 @@ function deleteMat() {
                 toast("success", "Félicitation !", `Le match du <strong>${date}</strong> a bien été supprimé.`);
 
                 listMatchs("#matList");
-            } else {
+            } else if (data == 'false') {
                 toast("danger", "Erreur !", `Une erreur est survenue.`);
+            } else {
+                toast("danger", "Erreur !", `Vous ne pouvez pas supprimer le match du <strong>${date}</strong> car il est assigné à au moins une buvette.`);
             }
         });
 }
