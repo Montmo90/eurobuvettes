@@ -1,8 +1,8 @@
 :root {
-    --nav-nouveautes-primaire: #76C9D0;
-    --nav-nouveautes-secondaire: #0D9FB4;
+    --nav-primaire: #76C9D0;
+    --nav-secondaire: #0D9FB4;
 
-    --nav-lien: white;
+    --nav-lien: #FFFFFF;
     
     --panel-fond: #F4F6F7;
 

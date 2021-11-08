@@ -16,7 +16,7 @@
             <!-- Volontaire -->
             <div class="tab-pane fade show active" id="nav-volontaire" role="tabpanel" aria-labelledby="nav-volontaire-tab">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="row justify-content-center p-2">
                             <input id="idVol" hidden>
                             <p>Ajouter un volontaire</p>
@@ -38,9 +38,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="row justify-content-center p-2 h-100">
-                            <div class="col-12">
+                            <div class="col-12 pb-3">
+                                <hr class="d-block d-sm-none">
                                 <p>Liste des volontaires</p>
                                 <select id="volList" class="form-select">
                                     <!-- option -->
@@ -48,7 +49,7 @@
                             </div>
                             <div class="col-12 d-flex align-items-end">
                                 <input class="btn btn-custom" type="button" id="effacerVol" value="Effacer" disabled>
-                                <input class="btn btn-warning ms-auto" type="button" id="modifVol" value="Modifier" disabled>
+                                <input class="btn btn-warning ms-auto" type="button" id="modifVol" value="Modifier" disabled>                                
                             </div>
                         </div>
                     </div>
@@ -57,7 +58,7 @@
             <!-- Buvette -->
             <div class="tab-pane fade" id="nav-buvette" role="tabpanel" aria-labelledby="nav-buvette-tab">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="row justify-content-center p-2">
                             <input id="idBuv" hidden>
                             <p>Ajouter une buvette</p>
@@ -87,9 +88,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="row justify-content-center p-2 h-100">
-                            <div class="col-12">
+                            <div class="col-12 pb-3">
+                                <hr class="d-block d-sm-none">
                                 <p>Liste des buvettes</p>
                                 <select id="buvList" class="form-select">
                                     <!-- option -->
@@ -106,7 +108,7 @@
             <!-- Equipe -->
             <div class="tab-pane fade" id="nav-equipe" role="tabpanel" aria-labelledby="nav-equipe-tab">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="row justify-content-center p-2">
                             <input id="idEqu" hidden>
                             <p>Ajouter une équipe</p>
@@ -123,9 +125,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="row justify-content-center p-2 h-100">
-                            <div class="col-12">
+                            <div class="col-12 pb-3">
+                                <hr class="d-block d-sm-none">
                                 <p>Liste des équipes</p>
                                 <select id="equList" class="form-select">
                                     <!-- option -->
@@ -145,7 +148,7 @@
             <!-- Match -->
             <div class="tab-pane fade" id="nav-match" role="tabpanel" aria-labelledby="nav-match-tab">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="row justify-content-center p-2">
                             <input id="idMat" hidden>
                             <p>Ajouter un match</p>
@@ -157,24 +160,24 @@
                             </div>
                             <div class="col-12 pb-3">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12 col-sm-6 pb-1 pb-sm-0">
                                         <select id="equ1" class="form-select">
                                             <!-- option -->
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12 col-sm-6">
                                         <input type="number" class="form-control" id="scoreEqu1" placeholder="Score">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 pb-3">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12 col-sm-6 pb-1 pb-sm-0">
                                         <select id="equ2" class="form-select">
                                             <!-- option -->
                                         </select>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-12 col-sm-6">
                                         <input type="number" class="form-control" id="scoreEqu2" placeholder="Score">
                                     </div>
                                 </div>
@@ -184,10 +187,11 @@
                                 <input class="btn btn-danger ms-auto" type="button" id="btnCancelMat" value="Annuler" hidden>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6">
+                    </div>                    
+                    <div class="col-12 col-sm-6">
                         <div class="row justify-content-center p-2 h-100">
-                            <div class="col-12">
+                            <div class="col-12 pb-3">
+                                <hr class="d-block d-sm-none">
                                 <p>Liste des matchs</p>
                                 <select id="matList" class="form-select">
                                     <!-- option -->
@@ -236,7 +240,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="<?= $this->url ?>public/src/get.js"></script>
 <script src="<?= $this->url ?>public/src/prive/volontaires.js"></script>

@@ -6,10 +6,17 @@ class M_Prive extends Model
     //Create
     function addVolontaire($nom, $age)
     {
+        if ($nom == "")
+            return false;
+
+        if ($age == "" || isNaN($age) || $age < 18) 
+            return false
+
         $sql = "INSERT INTO volontaire (nomVolontaire, ageVolontaire) VALUES (:nom, :age)";
         if ($this->Execute($sql, array(":nom" => $nom, ":age" => $age))) {
             return true;
         }
+
         return false;
     }
 
@@ -23,6 +30,12 @@ class M_Prive extends Model
     //Update
     function updateVolontaire($id, $nom, $age)
     {
+        if ($nom == "")
+            return false;
+
+        if ($age == "" || isNaN($age) || $age < 18) 
+            return false
+            
         $sql = "UPDATE volontaire SET nomVolontaire=:nom, ageVolontaire=:age WHERE idVolontaire = :id";
         if ($this->Execute($sql, array(":id" => $id, ":nom" => $nom, ":age" => $age))) {
             return true;

@@ -1,4 +1,5 @@
-$(function () {
+//Exécuté quand le document est prêt
+ $(function () {
     listVolontaires("#volList");
     listVolontaires("#respBuvList");
 });
@@ -29,7 +30,7 @@ $("#nomVol").change(function () {
 $("#ageVol").change(function () {
     let age = $("#ageVol").val();
 
-    if (age == "" || isNaN(age) || age < 0) {
+    if (age == "" || isNaN(age) || age < 18) {
         erreurAge = true;
         $("#ageVol").addClass("is-invalid");
         $("#ageVol").removeClass("is-valid");
