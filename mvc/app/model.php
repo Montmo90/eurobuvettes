@@ -1,6 +1,5 @@
 <?php
 abstract class Model {
-
     private $host = "localhost";
     private $dbName = "eurobuvette";
     private $userName = "root";
@@ -37,7 +36,6 @@ abstract class Model {
     protected function Execute($sql, $values = null) {
         $query = $this->connect->prepare($sql);
         return $query->execute($values);
-    }
-    
+    }    
 }
 ?>

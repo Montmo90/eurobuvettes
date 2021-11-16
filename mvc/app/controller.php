@@ -1,5 +1,4 @@
 <?php
-
 require_once("icontroller.php");
 
 abstract class Controller implements IController{
@@ -34,6 +33,5 @@ abstract class Controller implements IController{
         header("Location:../" . get_class($this));
         die;
     }
-
 }
 ?>

@@ -47,7 +47,17 @@ class Prive extends Controller {
         
         $nom = htmlentities($_POST['nom']);
         $age = intval(htmlentities($_POST['age']));
+        
+        if ($nom == ""){
+            echo 'false';
+            die;
+        }
 
+        if ($age == "" || $age < 18) {
+            echo 'false';
+            die;
+        }
+        
         if($this->model->addVolontaire($nom, $age)) {
             echo 'true';
             die;
@@ -67,6 +77,16 @@ class Prive extends Controller {
         $id = htmlentities($_POST['id']);
         $nom = htmlentities($_POST['nom']);
         $age = htmlentities($_POST['age']);
+        
+        if ($nom == ""){
+            echo 'false';
+            die;
+        }
+
+        if ($age == "" || isNaN($age) || $age < 18) {
+            echo 'false';
+            die;
+        }
         
         if($this->model->updateVolontaire($id, $nom, $age)) {
             echo 'true';
