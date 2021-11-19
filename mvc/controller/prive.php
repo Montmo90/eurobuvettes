@@ -83,7 +83,7 @@ class Prive extends Controller {
             die;
         }
 
-        if ($age == "" || isNaN($age) || $age < 18) {
+        if ($age == "" || $age < 18) {
             echo 'false';
             die;
         }

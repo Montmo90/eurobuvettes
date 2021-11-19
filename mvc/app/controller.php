@@ -7,10 +7,12 @@ abstract class Controller implements IController{
     public $url;
 
     function __construct() {
-        $url = str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']);
-        $this->url = str_replace($_SERVER['CONTEXT_DOCUMENT_ROOT'], '', $url);
+        // $url = str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']);
+        // $this->url = str_replace($_SERVER['CONTEXT_DOCUMENT_ROOT'], '', $url);
 
-        require_once("model/". get_class($this) .".php");
+        $this->url = "https://eurobuvettes.f-metayer.fr/";
+
+        require_once("model/". strtolower(get_class($this)) .".php");
         $n = "M_".get_class($this);
         $this->model = new $n();
 
@@ -30,7 +32,7 @@ abstract class Controller implements IController{
     }
 
     function back() {
-        header("Location:../" . get_class($this));
+        header("Location:../" . strtolower(get_class($this)));
         die;
     }
 }

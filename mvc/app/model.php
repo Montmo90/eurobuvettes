@@ -1,9 +1,14 @@
 <?php
 abstract class Model {
-    private $host = "localhost";
-    private $dbName = "eurobuvette";
-    private $userName = "root";
-    private $mdp = "";
+    // private $host = "localhost";
+    // private $dbName = "eurobuvette";
+    // private $userName = "root";
+    // private $mdp = "";
+
+    private $host = "fmetayubd17.mysql.db";
+    private $dbName = 'fmetayubd17';
+    private $userName = 'fmetayubd17';
+    private $mdp ='nVu4L7kTKEfd3eF';
 
     protected $connect; 
 

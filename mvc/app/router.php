@@ -7,7 +7,7 @@ $url =  explode('/', rtrim($_GET['url'], '/'));
 //$url[2] => les paramétres
 
 //on vas vérifier avec si l'argument 0 dopnc le controlleur est vide car si c'est le cas on affichera la page index
-$url[0] = $url[0] == "" ? "accueil" : $url[0];
+$url[0] = $url[0] == "" ? "Accueil" : $url[0];
 
 //Je test pour voir si le fichier existe avec $url[0] et donc si j'ai un controleur pour l'url
 if (file_exists('controller/' . $url[0]  . '.php')) {

@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= $this->url ?>public/css/style-bts.css">
     <?php
-        if(file_exists(str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']) ."public/css/" . get_class($this) . ".css")) {
-            echo '<link rel="stylesheet" href="'.$this->url.'public/css/' . get_class($this) . '.css">';
+        if(curl_init($this->url.'public/css/' . strtolower(get_class($this)) . '.css')) {
+            echo '<link rel="stylesheet" href="'.$this->url.'public/css/' . strtolower(get_class($this)) . '.css">';
         }
     ?>
     <title>Eurobuvettes 2021</title>
